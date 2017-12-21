@@ -1,20 +1,23 @@
 <style>
 .ram a{
 	text-decoration:none;
-	color: grey;
+	color: black;
 }
 </style>
 <div class="ram">
 <br>
-<center><%= link_to "Create new article", new_article_path, class: "btn btn-default" %>
+<center><%= link_to "Create new article", new_article_path, class: "btn btn-default" %></center>
 
-</div>
 
-<div class="index-content">
-    <div class="container">
+
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"/>
+<div class="container">
+<br>
 		<% @article.each do |article| %>
 
-	           		
+	           		<div class="well">
+				      <div class="media">
+				      <div class="media-body">
 	           		<div id="ed"><% if current_user != nil and current_user.id == article.user_id %>
 						<%= link_to "Edit",  edit_article_path(article.id) %> or
 						<%= link_to "Delete", article_path(article.id), data: {confirm: 'Rili deleted your post?'}, method: :delete %>
@@ -27,9 +30,14 @@
 					<span class="glyphicon glyphicon-time"></span> 
 					<%= article.created_at %>
 					<div class="ram">
-						<center><%= link_to "Read more", article_path(article.id), class: "btn btn-default" %></center>
+						
 					</div>
-				
+					 </div>
+    </div>
+    
+  </div>
+			<center><%= link_to "Read more", article_path(article.id), class: "btn btn-default" %></center>	
 		<%end%>
 	</div>
+</div>
 </div>
