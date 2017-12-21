@@ -1,2 +1,35 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
+<style>
+.ram a{
+	text-decoration:none;
+	color: grey;
+}
+</style>
+<div class="ram">
+<br>
+<center><%= link_to "Create new article", new_article_path, class: "btn btn-default" %>
+
+</div>
+
+<div class="index-content">
+    <div class="container">
+		<% @article.each do |article| %>
+
+	           		
+	           		<div id="ed"><% if current_user != nil and current_user.id == article.user_id %>
+						<%= link_to "Edit",  edit_article_path(article.id) %> or
+						<%= link_to "Delete", article_path(article.id), data: {confirm: 'Rili deleted your post?'}, method: :delete %>
+					<%end%>
+					</div>	
+
+					<h4><%= link_to article.title, article_path(article.id) %></h4>
+					<p><i><%= sanitize article.body %></i></p>
+					Author: <%= article.user.nickname %> |
+					<span class="glyphicon glyphicon-time"></span> 
+					<%= article.created_at %>
+					<div class="ram">
+						<center><%= link_to "Read more", article_path(article.id), class: "btn btn-default" %></center>
+					</div>
+				
+		<%end%>
+	</div>
+</div>
