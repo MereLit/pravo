@@ -3,20 +3,15 @@
   text-decoration:none;
   color: grey;
 }
-nav{
-    background-color: black;
-}
-
 
 </style>
-<div class="logo"></div>
 <nav>
   <div class="container-fluid">
     <div class="navbar-header">
-    <%= link_to "Blog", root_path, class: "navbar-brand" %>
+    <%= link_to "Pravo", root_path, class: "navbar-brand" %>
     </div>
    
-
+    
     <ul class="nav navbar-nav navbar-right">
     <% if current_user.nil? %>
     <li>
@@ -32,6 +27,7 @@ nav{
       </li>
        <% end %>
     </ul>
+
   </div>
 </nav>
 
