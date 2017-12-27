@@ -1,3 +1,10 @@
+<style>
+.login{
+  text-align: center;
+}
+</style>
+
+<div class="login">
 <h2>Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -24,3 +31,4 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>
