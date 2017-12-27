@@ -1,5 +1,4 @@
 class Article < ApplicationRecord
-	belongs_to :user
 	has_many :postcomments
 	 
 	validates :title, length: { in: 1..20 }

@@ -1,4 +1,5 @@
 <style>
+
 .com { 
     text-align: center;
     padding: 20px;
@@ -53,14 +54,14 @@
 <small><%= comment.created_at %></small></div>
 <%= link_to 'Destroy', [comment.article, comment], :confirm => 'Are you sure?', :method => :delete %>
 </div>
-
 <% end %>
 
-	
+
 <%= form_for :postcomment, url: article_postcomments_path(@article.id) do |f| %>
 <% if flash[:notice] %>
   <div class="notice"> <%= flash[:notice] %> </div>
 <% end %>
+
 <div class="com">
 	<p><%= f.label "Comment" %></p>
 	<%= f.text_area :text,  class: "content-field", placeholder: "Add a comment"%><br />
