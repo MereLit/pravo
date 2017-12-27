@@ -1,7 +1,29 @@
 <style>
+.time{
+	text-align: center;
+}
 .ram a{
 	text-decoration:none;
 	color: black;
+}
+.card
+{
+	  display: block;
+    padding: 4px;
+    margin-bottom: 20px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border: 6px solid #D9D9D9;
+    border-radius: 15px;
+    -webkit-transition: border .2s ease-in-out;
+    -o-transition: border .2s ease-in-out;
+    transition: border .2s ease-in-out;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.text
+{
+	padding: 10px;
 }
 </style>
 <div class="ram">
@@ -9,30 +31,32 @@
 
 
 
-
+<div class="index-container">
 <div class="container">
 <br>
-		<% @article.each do |article| %>
-
-	        <div class="well">
-				<div class="media">
-				   	<div class="media-body">
-			           		<div id="ed"><% if current_user != nil and current_user.id == article.user_id %>
-								<%= link_to "Edit",  edit_article_path(article.id) %> or
-								<%= link_to "Delete", article_path(article.id), data: {confirm: 'Rili deleted your post?'}, method: :delete %>
-							<%end%>
-							</div>	
-
-							<center><h4><%= link_to article.title, article_path(article.id) %></h4></center>
-							<p><i><%= sanitize article.body %></i></p>
-							<span class="glyphicon glyphicon-time"></span> 
-							<%= article.created_at %>
-						<div class="ram">
-							<center><%= link_to "Read more", article_path(article.id), class: "btn btn-default" %></center>	
-						</div>
-					</div>
-    			</div>
-  			</div>
+	<% @article.each do |article| %>
+		<div class="col-lg-6">
+			<div class="card">
+   		<div id="ed"><% if current_user != nil and current_user.id == article.user_id %>
+			<%= link_to "Edit",  edit_article_path(article.id) %> or
+			<%= link_to "Delete", article_path(article.id), data: {confirm: 'Rili deleted your post?'}, method: :delete %>
 		<%end%>
+		</div>	
+
+			<center><h4><%= link_to article.title, article_path(article.id) %></h4></center>
+			<div class="text">
+			<p><i><%= sanitize article.body %></i></p>
+			</div>
+			<div class="time">
+			<span class="glyphicon glyphicon-time"></span> 
+			<%= article.created_at %>
+			</div>
+		<div class="ram">
+			<center><%= link_to "Read more", article_path(article.id), class: "btn btn-default" %></center>	
+		</div>
+		</div>
 	</div>
+	<%end%>
+</div>
+</div>
 </div>
