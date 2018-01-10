@@ -1,19 +1,29 @@
 <style>
 .container-fluid a{
   text-decoration:none;
-  color: white;
+  color: grey;
 }
 
 nav{
-  background-color: black;
+  background-color: gold;
 }
 
+.ram a{
+  text-decoration:none;
+  color: black;
+}
 </style>
+
+<center><%= link_to root_path do%>
+    <img src="http://www.uzhnu.edu.ua/uploads/root/logos/_small_transp.png" width="150" height="150"> 
+    <%end%></center>
+
 <nav>
   <div class="container-fluid">
     <div class="navbar-header">
-    <%= link_to "Pravo", root_path, class: "navbar-brand" %>
+    <%= link_to "Кафедра міжднародного права", root_path, class: "navbar-brand" %>
     </div>
+    
    
     
     <ul class="nav navbar-nav navbar-right">
@@ -34,5 +44,5 @@ nav{
 
   </div>
 </nav>
-
-
+<br>
+<div class="ram"> 

@@ -33,8 +33,12 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+#avatar gem
+gem "paperclip", "~> 5.0.0"
 #validations
 gem 'client_side_validations'
+#editor
+gem 'tinymce-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

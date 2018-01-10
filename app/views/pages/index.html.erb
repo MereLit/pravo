@@ -1,42 +1,24 @@
-<style>
-.time{
-	text-align: center;
-}
-.ram a{
-	text-decoration:none;
-	color: black;
-}
-.card
-{
-	  display: block;
-    padding: 4px;
-    margin-bottom: 20px;
-    line-height: 1.42857143;
-    background-color: #fff;
-    border: 6px solid #D9D9D9;
-    border-radius: 15px;
-    -webkit-transition: border .2s ease-in-out;
-    -o-transition: border .2s ease-in-out;
-    transition: border .2s ease-in-out;
-    padding-left: 0px;
-    padding-right: 0px;
-}
-.text
-{
-	padding: 10px;
-}
-</style>
-<div class="ram">
-<br>
+     <div class="container">
+        <div class="row">
+            <div class="hidden-xs col-sm-4">
+                <div class="panel-group">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">Меню</h4>
+                        </div>
+                        <ul class="nav nav-pills nav-stacked">
+                            <li><a href="#">Новини</a></li>
+                            <li><a href="#">Інфо-центр</a></li>
+                            <li><a href="#">Лекції</a></li>
+                            <li><a href="http://www.uzhnu.edu.ua/">Сайт університету</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-8">
 
 
-
-<div class="index-container">
-<div class="container">
-<br>
 	<% @article.each do |article| %>
-		<div class="col-lg-6">
-			<div class="card">
    		<div id="ed"><% if current_user != nil and current_user.id == article.user_id %>
 			<%= link_to "Edit",  edit_article_path(article.id) %> or
 			<%= link_to "Delete", article_path(article.id), data: {confirm: 'Rili deleted your post?'}, method: :delete %>
@@ -54,9 +36,6 @@
 		<div class="ram">
 			<center><%= link_to "Read more", article_path(article.id), class: "btn btn-default" %></center>	
 		</div>
-		</div>
-	</div>
+		<hr>
 	<%end%>
-</div>
-</div>
-</div>
+	</div>
