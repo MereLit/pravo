@@ -4,9 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :postcomments
+  has_many :postcomments, dependent: :destroy
+  belongs_to :role
 
   validates :nickname, :email, :password_confirmation, :password, presence: true
- validates :nickname, :email, uniqueness: true
+  validates :nickname, :email, uniqueness: true
 
 end

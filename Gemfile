@@ -5,13 +5,17 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-#registrtion
+#registration
 gem 'devise'
+
 #admin panel
 gem 'activeadmin'
+
 #CSS gem
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'jquery-rails'
+
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use Puma as the app server
@@ -33,10 +37,14 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+
+
 #avatar gem
 gem "paperclip", "~> 5.0.0"
+
 #validations
 gem 'client_side_validations'
+
 #editor
 gem 'tinymce-rails'
 
