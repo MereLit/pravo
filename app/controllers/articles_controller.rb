@@ -1,17 +1,26 @@
 class ArticlesController < ApplicationController
-  before_action :authenticate_user!, exist:[:show]
+  before_action :authenticate_user!, only:[:new,:create,:destroy,:edit,:update]
   before_action :set_article, only: [:show,:edit,:update,:destroy]
 
   def new
-  @article = Article.new
+    if current_user.role.CreateArticle
+      @article = Article.new
+    else
+      redirect_to not_permission_path
+    end
   end 
 
   def show
-    @comments = Postcomment.where(article_id: @article.id)
+    if current_user==nil || current_user.role.watch
+      @comments = Postcomment.where(article_id: @article.id)
+    else
+      redirect_to not_permission_path
+    end
   end
 
   def create
-  	@article = current_user.articles.build(article_params)
+    params[:article][:user_id]=current_user.id
+  	@article = Article.create(article_params)
   	if @article.save
   		redirect_to root_path
   	else
@@ -26,6 +35,11 @@ class ArticlesController < ApplicationController
   end
 
   def edit
+    if current_user.role.EditArticle
+
+    else
+      redirect_to not_permission_path
+    end
   end
 
   def update
