@@ -35,12 +35,12 @@
 </style>
 <div class="post">
 <div id="ed"><% if current_user != nil and current_user.id == 1 %>
-				<%= link_to "Edit",  edit_article_path %> or
-				<%= link_to "Delete", article_path, data: {confirm: 'Rili deleted your post?'}, method: :delete %>
+				<%= link_to "Edit",  edit_post_path %> or
+				<%= link_to "Delete", post_path, data: {confirm: 'Точно видалити данний пост?'}, method: :delete %>
 			<%end%>
 </div>
-<h1><%= @article.title %></h1>
-<p><%= sanitize @article.body %></p>
+<h1><%= @post.title %></h1>
+<p><%= sanitize @post.body %></p>
 <hr>
 </div>
 
@@ -52,21 +52,21 @@
 </div>
 <div class="time"><span class="glyphicon glyphicon-time"></span>
 <small><%= comment.created_at %></small></div>
-<%= link_to 'Destroy', [comment.article, comment], :confirm => 'Are you sure?', :method => :delete %>
+<%= link_to 'Видалити', [comment.post, comment], :confirm => 'Ви впевнені?', :method => :delete %>
 </div>
 <% end %>
 
 
-<%= form_for :postcomment, url: article_postcomments_path(@article.id) do |f| %>
+<%= form_for :postcomment, url: post_postcomments_path(@post.id) do |f| %>
 <% if flash[:notice] %>
   <div class="notice"> <%= flash[:notice] %> </div>
 <% end %>
 
 <div class="com">
-	<p><%= f.label "Comment" %></p>
+	<p><%= f.label "Коментарь" %></p>
 	<%= f.text_area :text,  class: "content-field", placeholder: "Add a comment"%><br />
  
 
- <p><%= f.submit "Send" %></p>
+ <p><%= f.submit "Відправити" %></p>
  </div>
 <%end%>

@@ -1,10 +1,10 @@
-class ArticlesController < ApplicationController
+class PostsController < ApplicationController
   before_action :authenticate_user!, only:[:new,:create,:destroy,:edit,:update]
-  before_action :set_article, only: [:show,:edit,:update,:destroy]
+  before_action :set_post, only: [:show,:edit,:update,:destroy]
 
   def new
     if current_user.role.CreateArticle
-      @article = Article.new
+      @post = Post.new
     else
       redirect_to not_permission_path
     end
@@ -12,16 +12,16 @@ class ArticlesController < ApplicationController
 
   def show
     if current_user==nil || current_user.role.watch
-      @comments = Postcomment.where(article_id: @article.id)
+      @comments = Postcomment.where(post_id: @post.id)
     else
       redirect_to not_permission_path
     end
   end
 
   def create
-    params[:article][:user_id]=current_user.id
-  	@article = Article.create(article_params)
-  	if @article.save
+    params[:post][:user_id]=current_user.id
+  	@post = Post.create(post_params)
+  	if @post.save
   		redirect_to root_path
   	else
   		render 'new'
@@ -30,7 +30,7 @@ class ArticlesController < ApplicationController
   end
   
   def destroy
-  	@article.destroy
+  	@post.destroy
   	redirect_to root_path
   end
 
@@ -48,12 +48,12 @@ class ArticlesController < ApplicationController
   end
 
   private
-  	def article_params
-  		params.require(:article).permit(:user_id,:title,:body)
+  	def post_params
+  		params.require(:post).permit(:user_id,:title,:body)
 	
   	end
 
-  	def set_article
-  		@article = Article.find(params[:id])
+  	def set_post
+  		@post = Post.find(params[:id])
   	end
 end

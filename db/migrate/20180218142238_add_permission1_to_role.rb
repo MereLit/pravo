@@ -1,7 +1,7 @@
 class AddPermission1ToRole < ActiveRecord::Migration[5.1]
   def change
-    add_column :roles, :CreateArticle, :boolean
-    add_column :roles, :EditArticle, :boolean
-    add_column :roles, :CommentArticle, :boolean
+    add_column :roles, :CreatePosts, :boolean
+    add_column :roles, :EditPosts, :boolean
+    add_column :roles, :CommentPosts, :boolean
   end
 end
