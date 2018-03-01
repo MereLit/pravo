@@ -1,0 +1,38 @@
+<div class="post">
+<div id="ed"><% if current_user != nil and (current_user.id == 1 or current_user.role.EditPosts) %>
+				<%= link_to "Редагувати",  edit_post_path %> or
+				<%= link_to "Видалити", post_path, data: {confirm: 'Точно видалити данний пост?'}, method: :delete %>
+			<%end%>
+</div>
+<h1><%= @post.title %></h1>
+<p><%= sanitize @post.body %></p>
+<hr>
+</div>
+
+<% @comments.each do |comment|%>
+<div class="ram">
+ Користувач <b><%= comment.user.nickname %></b> написав:</p>
+ <div class = "bord">
+<i><%= comment.text %></i>
+</div>
+<div class="time"><span class="glyphicon glyphicon-time"></span>
+<small><%= comment.created_at %></small></div>
+<%= link_to 'Видалити', [comment.post, comment], :confirm => 'Ви впевнені?', :method => :delete %>
+</div>
+<% end %>
+
+<%if current_user !=nil and current_user.role.CommentPosts %>
+<%= form_for :postcomment, url: post_postcomments_path(@post.id) do |f| %>
+<% if flash[:notice] %>
+  <div class="notice"> <%= flash[:notice] %> </div>
+<% end %>
+
+<div class="com">
+	<p><%= f.label "Коментарь" %></p>
+	<%= f.text_area :text,  class: "content-field", placeholder: "Add a comment"%><br />
+ 
+
+ <p><%= f.submit "Відправити" %></p>
+ </div>
+ <%end%>
+<%end%>

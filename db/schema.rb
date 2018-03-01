@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180218142238) do
+ActiveRecord::Schema.define(version: 20180301085546) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -43,30 +43,33 @@ ActiveRecord::Schema.define(version: 20180218142238) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
-  create_table "articles", force: :cascade do |t|
-    t.integer "user_id"
-    t.string "title"
-    t.string "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "postcomments", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "article_id"
+    t.integer "post_id"
     t.string "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "roles", force: :cascade do |t|
-    t.string "name"
-    t.boolean "watch"
+  create_table "posts", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "title"
+    t.string "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "CreateArticle"
-    t.boolean "EditArticle"
-    t.boolean "CommentArticle"
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  create_table "roles", force: :cascade do |t|
+    t.string "name"
+    t.boolean "CreatePosts"
+    t.boolean "EditPosts"
+    t.boolean "CommentPosts"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

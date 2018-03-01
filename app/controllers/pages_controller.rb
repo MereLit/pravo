@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def index
   @users = User.all	
-  @article = Article.all
+  @posts = Post.all
   end
 end
