@@ -4,8 +4,10 @@
 				<%= link_to "Видалити", post_path, data: {confirm: 'Точно видалити данний пост?'}, method: :delete %>
 			<%end%>
 </div>
-<h1><%= @post.title %></h1>
-<p><%= sanitize @post.body %></p>
+<h1><center><%= @post.title %></h1>
+<center><%= image_tag @post.image(:medium) %>
+<p>
+<center><p><%= sanitize @post.body %></p>
 <hr>
 </div>
 

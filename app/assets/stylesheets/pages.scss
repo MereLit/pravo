@@ -33,3 +33,15 @@
 	margin-left: 20px;
 	margin-right: 20px;
 }
+
+#parent {
+  display: flex;
+}
+
+#narrow {
+margin-left: 10px;
+}
+#wide {
+  width: 110px;
+  flex: 1;
+}

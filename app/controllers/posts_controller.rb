@@ -39,7 +39,7 @@ class PostsController < ApplicationController
   end
 
   def update
-  	@article.update(article_params)
+  	@post.update(post_params)
   	redirect_to root_path
   end
 
