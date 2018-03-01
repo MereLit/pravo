@@ -19,9 +19,9 @@
 
 
 	<% @posts.each do |post| %>
-   		<div id="ed"><% if current_user != nil and current_user.id == article.user_id %>
-			<%= link_to "Edit",  edit_post_path(post.id) %> or
-			<%= link_to "Delete", post_path(post.id), data: {confirm: 'Точно видалити цей пост?'}, method: :delete %>
+   		<div id="ed"><% if current_user != nil and (current_user.id == post.user_id or current_user.role.EditPosts) %>
+			<%= link_to "Редагувати",  edit_post_path(post.id) %> або
+			<%= link_to "Видалити", post_path(post.id), data: {confirm: 'Точно видалити цей пост?'}, method: :delete %>
 		<%end%>
 		</div>	
 
@@ -34,7 +34,7 @@
 			<%= post.created_at %>
 			</div>
 		<div class="ram">
-			<center><%= link_to "Читати більше", post_path(post.id), class: "btn btn-default" %></center>	
+			<center><%= link_to "Дізнатись більше", post_path(post.id), class: "btn btn-default" %></center>	
 		</div>
 		<hr>
 	<%end%>

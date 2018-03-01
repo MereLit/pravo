@@ -1,4 +1,4 @@
-<center><%= form_for @post, url: post_path, validate: true do |f| %>
+<center><%= form_for @post, url: posts_path, validate: true do |f| %>
 	<% if @post.errors.any? %>
 	 <% @post.errors.full_messages.each do |msg| %>
 	 	<li><%=msg%></li>

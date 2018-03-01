@@ -1,42 +1,7 @@
-<style>
-
-.com { 
-    text-align: center;
-    padding: 20px;
-}
-
-.bord{
-	background: #FFF8DC;
-	border: 1px;
-	border-style: solid;
-	border-color: #DCDCDC;
-	border-radius: 20px;
-	margin-bottom: 5px;
-	padding: 20px;
-	margin-right: 15px;
-	margin-left: 15px;
-}
-
-.ram
-{
-	margin-right: 15px;
-	margin-left: 15px;
-}
-
-.time{
-	text-align: right;
-	opacity: 0.65;
-}
-
-.post{
-	margin-left: 20px;
-	margin-right: 20px;
-}
-</style>
 <div class="post">
-<div id="ed"><% if current_user != nil and current_user.id == 1 %>
-				<%= link_to "Edit",  edit_post_path %> or
-				<%= link_to "Delete", post_path, data: {confirm: 'Точно видалити данний пост?'}, method: :delete %>
+<div id="ed"><% if current_user != nil and (current_user.id == 1 or current_user.role.EditPosts) %>
+				<%= link_to "Редагувати",  edit_post_path %> or
+				<%= link_to "Видалити", post_path, data: {confirm: 'Точно видалити данний пост?'}, method: :delete %>
 			<%end%>
 </div>
 <h1><%= @post.title %></h1>
@@ -46,7 +11,7 @@
 
 <% @comments.each do |comment|%>
 <div class="ram">
- User <b><%= comment.user.nickname %></b> write:</p>
+ Користувач <b><%= comment.user.nickname %></b> написав:</p>
  <div class = "bord">
 <i><%= comment.text %></i>
 </div>
@@ -56,7 +21,7 @@
 </div>
 <% end %>
 
-
+<%if current_user !=nil and current_user.role.CommentPosts %>
 <%= form_for :postcomment, url: post_postcomments_path(@post.id) do |f| %>
 <% if flash[:notice] %>
   <div class="notice"> <%= flash[:notice] %> </div>
@@ -69,4 +34,5 @@
 
  <p><%= f.submit "Відправити" %></p>
  </div>
+ <%end%>
 <%end%>

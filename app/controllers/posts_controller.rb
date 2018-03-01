@@ -1,9 +1,9 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only:[:new,:create,:destroy,:edit,:update]
-  before_action :set_post, only: [:show,:edit,:update,:destroy]
+  before_action :authenticate_user!, except:[:show]
+  before_action :set_post, except:[:new,:create]
 
   def new
-    if current_user.role.CreateArticle
+    if current_user.role.CreatePosts
       @post = Post.new
     else
       redirect_to not_permission_path
@@ -11,11 +11,7 @@ class PostsController < ApplicationController
   end 
 
   def show
-    if current_user==nil || current_user.role.watch
       @comments = Postcomment.where(post_id: @post.id)
-    else
-      redirect_to not_permission_path
-    end
   end
 
   def create
@@ -35,7 +31,7 @@ class PostsController < ApplicationController
   end
 
   def edit
-    if current_user.role.EditArticle
+    if current_user.role.EditPosts
 
     else
       redirect_to not_permission_path
