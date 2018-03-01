@@ -8,3 +8,4 @@
 AdminUser.create!(email: 'pravo@gmail.com', password: '12345678', password_confirmation: '12345678') if Rails.env.development?
 AdminUser.create!(email: 'pravo@gmail.com', password: '87654321', password_confirmation: '87654321') if Rails.env.production?
 Role.create!(name: 'user', CreatePosts: false, EditPosts:false, CommentPosts:true)
+Role.create!(name: 'Editor', CreatePosts: true, EditPosts:true, CommentPosts:true)

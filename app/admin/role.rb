@@ -11,5 +11,5 @@ ActiveAdmin.register Role do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
-permit_params :watch, :CreatePosts, :EditPosts, :CommentPosts
+permit_params :name, :CreatePosts, :EditPosts, :CommentPosts
 end
