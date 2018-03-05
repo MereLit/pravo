@@ -1,34 +1,31 @@
-<style>
-.container-fluid a{
-  text-decoration:none;
-  color: grey;
-}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-nav{
-  background-color: gold;
-}
-
-.ram a{
-  text-decoration:none;
+<style type="text/css">
+  .container-fluid a {
+    text-decoration:none;
   color: black;
-}
+  }
+
+  .tratata{
+    position: right;
+  }
 </style>
 
-<center><%= link_to root_path do%>
-    <img src="http://www.uzhnu.edu.ua/uploads/root/logos/_small_transp.png" width="150" height="150"> 
-    <%end%></center>
 
-<nav>
+<nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-    <%= link_to "Кафедра міжднародного права", root_path, class: "navbar-brand" %>
+      <%= link_to "Кафедра міжднародного права", root_path, class: "navbar-brand" %>
     </div>
-    
-   
-    
-    <ul class="nav navbar-nav navbar-right">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Page 1</a></li>
+      <li><a href="#">Page 2</a></li>
+      <ul class="nav navbar-nav navbar-right">
     <% if current_user.nil? %>
-    <li>
+    <li class="tratata">
     <%= link_to user_session_path do %>
       <i class="glyphicon glyphicon-user"></i> Вхід
       <%end%>
@@ -41,8 +38,6 @@ nav{
       </li>
        <% end %>
     </ul>
-
+    </ul>
   </div>
 </nav>
-<br>
-<div class="ram"> 
