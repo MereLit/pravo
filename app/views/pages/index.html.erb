@@ -1,48 +1,18 @@
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"/>
-
-     <div class="container">
-        <div class="row">
-            <div class="hidden-xs col-sm-4">
-                <div class="panel-group">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">Меню</h4>
-                        </div>
-                        <ul class="nav nav-pills nav-stacked">
-                            <li><%=link_to 'Новини'%></li>
-                            <li><%=link_to 'Інфо-Центр'%></li>
-                            <li><%=link_to 'Лекції'%></li>
-                            <li><a href="http://www.uzhnu.edu.ua/">Сайт університету</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-<div class="col-xs-12 col-sm-8">
+ <%= render "pages/block" %>
+<br>
+<div class="container">
+	<div class="row">
 	<% @posts.each do |post| %>
-		<div class="well">
-			<div class="media">
-		      	<a class="pull-left" href="#">
-		    		<img class="media-object" src="http://placekitten.com/150/150"></a>
-						<center><h4><%= link_to post.title, post_path(post.id) %></h4></center>
-						<div class="text">
-						<div id="parent">
-						<div id="wide"><%= image_tag post.image(:thumb) %></div>
-						<div id="narrow"><i><%= sanitize post.body[0..100] %>...</i></div>
-						</div>
-						</div>
-						<div class="time">
-						<span class="glyphicon glyphicon-time"></span> 
-						<%= post.created_at %>
-						</div>
-					<div class="ram">
-						<center><%= link_to "Дізнатись більше", post_path(post.id), class: "btn btn-default" %></center>	
-					</div>
-				</div>
-			</div>
+	 <div class="col-sm-6 col-md-4 col-lg-3 mt-4">     
+		<div class="card" style="width: 25rem;">
+		  <div class="card-img-top"><%= image_tag post.image(:thumb) %></div>
+		     <div class="card-block">
+			    <h4 class="card-title"><%= link_to post.title, post_path(post.id) %></h4>
+			    <p class="card-text"><i><%= sanitize post.body[0..50] %></i>...</p>
+			    <center><%= link_to "Дізнатись більше", post_path(post.id), class: "btn btn-default" %></center>
+		     </div>
 		</div>
-	<%end%>
+	 </div>
+	<%end%>	
+	</div>
 </div>

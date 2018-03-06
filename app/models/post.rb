@@ -6,7 +6,7 @@ class Post < ApplicationRecord
 	validates :title, uniqueness: true
 	validates :title, presence: true
 
-	has_attached_file :image, styles: { medium: "800x800>", thumb: "100x100>" }
+	has_attached_file :image, styles: { medium: "800x800>", thumb: "300x180>" }
   	validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
 end
