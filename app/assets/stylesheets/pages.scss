@@ -3,6 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+/*********************************/
+/*             NEWS              */
+/*********************************/
+
+
 
 .card {
     font-size: 1em;
@@ -39,23 +44,22 @@
     clear: both;
     margin-top: .5em;
     color: rgba(0, 0, 0, .68);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-/*
-Fade content bs-carousel with hero headers
-Code snippet by maridlcrmn (Follow me on Twitter @maridlcrmn) for Bootsnipp.com
-Image credits: unsplash.com
-*/
+
 
 /********************************/
 /*       Fade Bs-carousel       */
 /********************************/
 .fade-carousel {
     position: relative;
-    height: 50vh;
+    height: 70vh;
 }
 .fade-carousel .carousel-inner .item {
-    height: 50vh;
+    height: 70vh;
 }
 .fade-carousel .carousel-indicators > li {
     margin: 0 2px;
@@ -166,4 +170,16 @@ Image credits: unsplash.com
 }
 @media screen and (max-width: 640px){
     .hero h1 { font-size: 4em; }    
+}
+
+/*********************************/
+/*          Lecsion              */
+/*********************************/
+
+.lecsion{
+  position: relative;
+    height: 60vh;
+    background-color: lightgrey;
+    border-top: 1px solid Silver; 
+    border-bottom: 1px solid Silver;
 }

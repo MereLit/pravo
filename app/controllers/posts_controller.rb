@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except:[:show]
-  before_action :set_post, except:[:new,:create]
+  before_action :set_post, except:[:new,:create,:index]
 
   def new
     if current_user.role.CreatePosts
@@ -9,6 +9,12 @@ class PostsController < ApplicationController
       redirect_to not_permission_path
     end
   end 
+
+  def index
+    @posts = Post.all.order(created_at: :DESC)
+  end
+    
+  
 
   def show
       @comments = Postcomment.where(post_id: @post.id)
