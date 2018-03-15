@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   belongs_to :role
 
+  has_many :events
   has_many :posts
   has_many :postcomments, dependent: :destroy
 

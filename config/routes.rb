@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  
   root to: 'pages#index'
   get "/not_permission", to: "pages#NotPermission", as:"not_permission"
 
@@ -10,6 +9,7 @@ Rails.application.routes.draw do
   resources :posts do
   	resources :postcomments
   end
+  resources :events
 
 
 end

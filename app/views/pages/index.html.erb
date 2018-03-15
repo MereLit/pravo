@@ -1,3 +1,4 @@
+ 
  <%= render "pages/block" %>
 <br>
 <div class="container">
@@ -11,12 +12,36 @@
 		  <div class="card-img-top"><%= image_tag post.image(:thumb) %></div>
 		     <div class="card-block">
 			    <h4 class="card-title"><%= link_to post.title, post_path(post.id) %></h4>
-			    <p class="card-text"><i><%= sanitize post.body[0..50] %></i></p>
+			    
 			    <center><%= link_to "Дізнатись більше", post_path(post.id), class: "btn btn-default" %></center>
 		     </div>
 		</div>
 	 </div>
 	<%end%>	
+		
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<p><h3 style="font-weight: 900;">ПОДІЇ <h5 class="link">| <%= link_to "Всі події", events_path %></h5></h3></p>
+		<% @events.each do |event| %>
+			<div class="[ col-xs-12 col-sm-offset-2 col-sm-8 ]">
+				<ul class="event-list">
+					<li>
+						<time datetime="2014-07-20">
+							<span class="day"><%= event.edate.day %></span>
+							<span class="month"><%= event.edate.month %></span>
+							<span class="year"><%= event.edate.year %></span>
+							<span class="time">ALL DAY</span>
+						</time>
+						<div class="info">
+							<h2 class="title"><%= event.etitle %></h2>
+							<p class="desc"><%= sanitize event.einfo%></p>
+						</div>
+					</li>
+			</div>
+		<%end%>
 	</div>
 </div>
 <br>

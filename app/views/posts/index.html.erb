@@ -9,7 +9,7 @@
 		  <div class="card-img-top"><%= image_tag post.image(:thumb) %></div>
 		     <div class="card-block">
 			    <h4 class="card-title"><%= link_to post.title, post_path(post.id) %></h4>
-			    <p class="card-text"><i><%= sanitize post.body[0..50] %></i></p>
+			    
 			    <center><%= link_to "Дізнатись більше", post_path(post.id), class: "btn btn-default" %></center>
 		     </div>
 		</div>
