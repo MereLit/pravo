@@ -17,6 +17,7 @@ class PostsController < ApplicationController
   
 
   def show
+     @posts = Post.all.order(created_at: :DESC)
       @comments = Postcomment.where(post_id: @post.id)
   end
 
