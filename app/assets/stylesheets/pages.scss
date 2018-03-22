@@ -260,7 +260,7 @@
     .event-list > li {
       position: relative;
       display: block;
-      width: 100%;
+      width: 160%;
       height: 75px;
       padding: 0px;
     }
@@ -300,3 +300,10 @@
       bottom: 0px;
 }
 }
+
+.news_right{
+      position: absolute; /* Абсолютное позиционирование */
+        right: 0; /* Положение от правого края окна */
+        top: 520px; /* Положение от верхнего края */
+        width: 350px; /* Ширина колонки */
+    }

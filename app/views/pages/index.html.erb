@@ -19,14 +19,12 @@
 	 </div>
 	<%end%>	
 		
-	</div>
-</div>
+	
 
-<div class="container">
-	<div class="row">
+<div class="news_right">
 		<p><h3 style="font-weight: 900;">ПОДІЇ <h5 class="link">| <%= link_to "Всі події", events_path %></h5></h3></p>
-		<% @events.each do |event| %>
-			<div class="[ col-xs-12 col-sm-offset-2 col-sm-8 ]">
+		<% @events[0..2].each do |event| %>
+			<div class="[ col-xs-12 col-sm-offset-0 col-sm-8 ]">
 				<ul class="event-list">
 					<li>
 						<time datetime="2014-07-20">
@@ -42,7 +40,8 @@
 					</li>
 			</div>
 		<%end%>
-	</div>
+		</div>
+		</div>
 </div>
 <br>
 <div class="lecsion">
