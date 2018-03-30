@@ -60,6 +60,7 @@ group :development, :test do
   gem 'sqlite3'
 end
 
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
@@ -68,6 +69,13 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'sqlite3'
+end
+
+group :test do
+    gem 'rspec-rails', '~> 3.0.0'
+    gem 'factory_girl_rails'
+    gem 'capybara', '~> 2.13'
+
 end
 
 group :production do
