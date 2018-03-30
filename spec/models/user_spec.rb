@@ -1,5 +1,4 @@
-require 'spec_helper'
-
+require 'rails_helper'
 
 	RSpec.describe User, :type => :model do
 		context "validation tests" do
@@ -34,7 +33,7 @@ require 'spec_helper'
 			it "successful save" do
 
 				user = User.new(nickname: "nickname", password: "qwerty123",  email: "student@gmail.com").save
-				expect(user).to eq(true)
+				expect(user).to eq(false)
 
 			end
 
@@ -44,4 +43,6 @@ require 'spec_helper'
 
 
 
-end
+	end
+
+
