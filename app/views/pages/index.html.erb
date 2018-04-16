@@ -3,11 +3,11 @@
 <br>
 <div class="container">
 	<div class="row">
-	
-	<p><h3 style="font-weight: 900;">НОВИНИ <h5 class="link">| <%= link_to "Всі новини", posts_path %></h5></h3></p>
+	<div class="col-sm-6 col-md-8 col-lg-9 mt-4">  
+	<h3 style="font-weight: 900;">НОВИНИ <h5 class="link">| <%= link_to "Всі новини", posts_path %></h5></h3>
 	
 	<% @posts[0..2].each do |post| %>
-	 <div class="col-sm-6 col-md-4 col-lg-3 mt-4">     
+	    <div class="col-sm-6 col-md-8 col-lg-4 mt-9">
 		<div class="card" style="width: 25rem;">
 		  <div class="card-img-top"><%= image_tag post.image(:thumb) %></div>
 		     <div class="card-block">
@@ -18,13 +18,12 @@
 		</div>
 	 </div>
 	<%end%>	
+	</div>
 		
-	
-
-<div class="news_right">
-		<p><h3 style="font-weight: 900;">ПОДІЇ <h5 class="link">| <%= link_to "Всі події", events_path %></h5></h3></p>
+		<div class="[ col-sm-6 col-md-4 col-lg-2 mt-4]">
+		<h3 style="font-weight: 900;">ПОДІЇ <h5 class="link">| <%= link_to "Всі події", events_path %></h5></h3>
 		<% @events[0..2].each do |event| %>
-			<div class="[ col-xs-12 col-sm-offset-0 col-sm-8 ]">
+			
 				<ul class="event-list">
 					<li>
 						<time datetime="2014-07-20">
@@ -35,11 +34,11 @@
 						</time>
 						<div class="info">
 							<h2 class="title"><%= event.etitle %></h2>
-							<p class="desc"><%= sanitize event.einfo%></p>
 						</div>
 					</li>
-			</div>
+			
 		<%end%>
+		</div>
 		</div>
 		</div>
 </div>
