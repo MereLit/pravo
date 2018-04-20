@@ -11,27 +11,39 @@ nav {
   }
 
   .container-fluid a {
-    text-decoration:none;
+  text-decoration:none;
   color: white;
+  }
+
+  ul.nav li:hover ul.dropdown-menu {
+  display:block;
+}
+  ul.nav p{
+    color:white;
+    font-size: 130%;
+    padding: 10px;
+    margin: 2px;
   }
 
 </style>
 
-
 <nav>
   <div class="container-fluid">
     <div class="navbar-header">
-      <%= link_to "Кафедра міжднародного права", root_path, class: "navbar-brand" %>
+      <%= image_tag("logo.png", height: '55', width: '75') %>
     </div>
     <ul class="nav navbar-nav">
+      <%= link_to "Головна сторінка", root_path, class: "navbar-brand" %>
       <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Новини<b class="caret"></b></a>
+        <p class="dropdown-toggle" data-toggle="dropdown" data: { no_turbolink: true } >Інформація для вас<b class="caret"></b></p>
         <ul class="dropdown-menu">
           <li><a href="posts#index">Всі новини</a></li>
-          <li><a href="#">Page 1</a></li>
-          <li><a href="#">Page 2</a></li>
+          <li><a href="events#index">Всі події</a></li>
           <li class="divider"></li>
-          <li><a href="#">Proba</a></li>
+          <li><a>Корисна інформація</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Для абітурієнта</a></li>
+          <li><a href="#">Для студента</a></li>
         </ul>
       </li>
     </ul>

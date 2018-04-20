@@ -12,8 +12,7 @@
 							<span class="time">ALL DAY</span>
 						</time>
 						<div class="info">
-							<h2 class="title"><%= event.etitle %></h2>
-							<p class="desc"><%= sanitize event.einfo%></p>
+							<h2 class="title"><%=link_to event.etitle, event_path(event.id) %></h2>
 						</div>
 					</li>
 			</div>
