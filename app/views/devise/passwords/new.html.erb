@@ -1,0 +1,51 @@
+<style>
+body, html{
+     height: 100%;
+   background-repeat: no-repeat;
+   background:url(https://i.ytimg.com/vi/4kfXjatgeEU/maxresdefault.jpg);
+   font-family: 'Oxygen', sans-serif;
+      background-size: cover;
+}
+
+.main{
+   margin:50px 15px;
+}
+
+.main-center{
+  margin-top: 30px;
+  margin: 0 auto;
+  max-width: 400px;
+  padding: 10px 40px;
+  background:#009edf;
+  color: black;
+  text-shadow: none;
+
+}
+
+</style>
+<div class="container">
+  	<div class="row main">
+    	<div class="main-login main-center">
+	        <center>
+				<h2>Забули пароль?</h2>
+
+				<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+				  <%= devise_error_messages! %>
+
+				  <div class="form-group">
+				    <%= f.label "Логін" %><br />
+				    <div class="input-group">
+				    	<center><%= f.email_field :email, autofocus: true %></center>
+				    </div>
+				  </div>
+
+				  <div class="actions">
+				    <%= f.submit "Надіслати інструкції для відновлення паролю" %>
+				  </div>
+				<% end %>
+
+				<%= render "devise/shared/links" %>
+			</center>
+		</div>
+	</div>
+</div>

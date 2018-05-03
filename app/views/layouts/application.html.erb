@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pravo</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    
+  </head>
+
+  <body>
+    
+  <%= render 'layouts/navbar' %>
+  <br>
+  <div class="content-nav">
+  <div class="col-xm-3">
+    <div class="ram"> 
+    <%= yield %>
+    </div>
+    </div></div>
+  <%=render 'layouts/footer' %>
+  </body>
+</html>

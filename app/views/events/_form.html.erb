@@ -1,0 +1,28 @@
+	<p><%= f.label "Назва події" %></p>
+	<%= f.text_field :etitle %><br/>
+	<br/>
+	<p><%= f.label "Data" %></p>
+	<%= date_select("event", "edate", start_year: 2018, end_year: 2088, order: [:day, :month, :year]) %><br />
+	<br/>
+	<p><%= f.label "Time" %></p>
+	<%= time_select("event", "etime") %><br />
+	<br/>
+	<p><%= f.label "Адреса" %></p>
+	<%= f.text_field :venue %><br/>
+	<br/>
+	<p><%= f.label "Назва закладу" %></p>
+	<%= f.text_field :venume_det %><br/>
+	<br/>
+	<p><%= f.label "Тип" %></p>
+	<%= f.select :etupe, ['Концерт','Екскурсія','Вистава','Збори'] %><br />
+	<br/>
+	<p><%= f.label "Вхід" %></p>
+	<%= f.select :ecost, ['Безплатний','Платний'] %><br />
+	<br/>
+	<p><%= f.label "Інформація" %></p>
+	<%= f.text_area :einfo, :class => "tinymce", :rows => 30, :cols => 80 %><br/>
+	<%= tinymce %><br/>
+
+	<br/>
+	<p><%= f.submit "Зберегти" %></p>
+

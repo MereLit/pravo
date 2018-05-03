@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  edate: 2018-03-15 12:19:21
+  etime: 2018-03-15 12:19:21
+  venue: MyString
+  venume_det: MyString
+  etupe: MyString
+  ecost: MyString
+  einfo: MyString
+
+two:
+  edate: 2018-03-15 12:19:21
+  etime: 2018-03-15 12:19:21
+  venue: MyString
+  venume_det: MyString
+  etupe: MyString
+  ecost: MyString
+  einfo: MyString

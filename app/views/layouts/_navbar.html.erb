@@ -1,0 +1,68 @@
+ <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
+
+<style type="text/css">
+nav {
+  background-color: #00091c;
+  position: fixed;
+  z-index: 4;
+  width: 100%;
+  }
+
+  .container-fluid a {
+  text-decoration:none;
+  color: white;
+  }
+
+  ul.nav li:hover ul.dropdown-menu {
+  display:block;
+}
+  ul.nav p{
+    color:white;
+    font-size: 130%;
+    padding: 10px;
+    margin: 2px;
+  }
+
+</style>
+
+<nav>
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <%= image_tag("logo.png", height: '55', width: '75') %>
+    </div>
+    <ul class="nav navbar-nav">
+      <%= link_to "Головна сторінка", root_path, class: "navbar-brand" %>
+      <li class="dropdown">
+        <p class="dropdown-toggle" data-toggle="dropdown" data: { no_turbolink: true } >Інформація для вас<b class="caret"></b></p>
+        <ul class="dropdown-menu">
+          <li><a href="posts#index">Всі новини</a></li>
+          <li><a href="events#index">Всі події</a></li>
+          <li class="divider"></li>
+          <li><a>Корисна інформація</a></li>
+          <li class="divider"></li>
+          <li><a href="/pages/abit">Для абітурієнта</a></li>
+          <li><a href="/pages/stud">Для студента</a></li>
+        </ul>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+    <% if current_user.nil? %>
+    <li class="tratata">
+        <%= link_to user_session_path do %>
+        <i class="glyphicon glyphicon-user"></i> Вхід
+        <%end%>
+    </li>
+      <% else %> 
+    <li>
+        <%= link_to destroy_user_session_path, method: :delete do %>
+        <i class="glyphicon glyphicon-log-in"></i> Вийти
+        <%end%>
+    </li>
+       <% end %>
+    </ul>
+
+  </div>
+</nav>
+<br>

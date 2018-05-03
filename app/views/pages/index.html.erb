@@ -1,0 +1,45 @@
+<%= render "pages/block" %>
+<div class="container">
+	<div class="row">
+	<div class="col-sm-6 col-md-8 col-lg-9 mt-4">  
+	<h3 style="font-weight: 900;">НОВИНИ <h5 class="link">| <%= link_to "Всі новини", posts_path %></h5></h3>
+	
+	<% @posts[0..2].each do |post| %>
+	    <div class="col-sm-6 col-md-8 col-lg-4 mt-9">
+		<div class="card" style="width: 25rem;">
+		  <div class="card-img-top"><%= image_tag post.image(:thumb) %></div>
+		     <div class="card-block">
+			    <h4 class="card-title"><%= link_to post.title, post_path(post.id) %></h4>
+			    
+			    <center><%= link_to "Дізнатись більше", post_path(post.id), class: "btn btn-default" %></center>
+		     </div>
+		</div>
+	 </div>
+	<%end%>	
+	</div>
+		
+		<div class="[ col-sm-6 col-md-4 col-lg-2 mt-4]">
+		<h3 style="font-weight: 900;">ПОДІЇ <h5 class="link">| <%= link_to "Всі події", events_path %></h5></h3>
+		<% @events[0..2].each do |event| %>
+				<ul class="event-list">
+					<li>
+						<time datetime="2014-07-20">
+							<span class="day"><%= event.edate.day %></span>
+							<span class="month"><%= event.edate.month %></span>
+							<span class="year"><%= event.edate.year %></span>
+							<span class="time">ALL DAY</span>
+						</time>
+						<div class="info">
+							<h2 class="title"><%= link_to event.etitle, event_path(event.id) %></h2>
+						</div>
+					</li>
+		<%end%>
+		</div>
+		</div>
+		</div>
+</div>
+<br>
+<div class="lecsion">
+<br>
+<p><h3 style="font-weight: 900; margin-left: 65px;">ЛЕКЦІЇ</h3></p>
+</div>

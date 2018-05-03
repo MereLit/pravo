@@ -1,0 +1,10 @@
+	<p><%= f.label :title %></p>
+  	<%= f.text_field :title %><br />
+	<br/>
+  	<p><%= f.label :body %></p>
+	<%= f.text_area :body, :class => "tinymce", :rows => 30, :cols => 80 %><br/>
+	<%= tinymce %><br/>
+  	<p><%= f.label :image %></p>
+  	<%= f.file_field :image %><br/>
+ 	<br/>
+  	<p><%= f.submit "Зберегти" %></p>

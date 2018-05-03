@@ -1,0 +1,9 @@
+<br>
+<center><%= form_for @event, url: events_path do |f| %>
+	<% if @event.errors.any? %>
+	 <% @event.errors.full_messages.each do |msg| %>
+	 	<li><%=msg%></li>
+	   <%end%>
+	 <%end%>
+	<%= render 'form', f:f%>
+<%end%></center>
