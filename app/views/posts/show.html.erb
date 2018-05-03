@@ -17,7 +17,7 @@
 	<div class="row">
 <div class="post">
 
-<div id="ed"><% if current_user != nil and (current_user.id == 1 or current_user.role.EditPosts) %>
+<div id="ed"><% if current_user.admin? %>
 				<%= link_to "Редагувати",  edit_post_path %> or
 				<%= link_to "Видалити", post_path, data: {confirm: 'Точно видалити данний пост?'}, method: :delete %>
 			<%end%>
@@ -41,7 +41,7 @@
 </div>
 <% end %>
 
-<%if current_user !=nil and current_user.role.CommentPosts %>
+<%if current_user !=nil %>
 <%= form_for :postcomment, url: post_postcomments_path(@post.id) do |f| %>
 <% if flash[:notice] %>
   <div class="notice"> <%= flash[:notice] %> </div>
