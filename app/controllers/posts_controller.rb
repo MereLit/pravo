@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :set_post, except:[:new,:create,:index]
 
   def new
-    if current_user.role.CreatePosts
+    if current_user.editor
       @post = Post.new
     else
       redirect_to not_permission_path
