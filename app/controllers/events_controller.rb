@@ -7,7 +7,7 @@ class EventsController < ApplicationController
   end
 
 def new
-    if current_user.role.CreatePosts
+    if current_user.admin
       @event = Event.new
     else
       redirect_to not_permission_path
@@ -30,7 +30,7 @@ def new
   end
 
   def edit
-    if current_user.role.EditPosts
+    if current_user.admin
 
     else
       redirect_to not_permission_path
@@ -38,8 +38,8 @@ def new
   end
 
   def update
-  	@event.update(evemt_params)
-  	redirect_to root_path
+  	@event.update(event_params)
+  	redirect_to event_path
   end
 
   private

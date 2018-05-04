@@ -6,10 +6,10 @@
  		}
 
  		.right_block{
- 			position: absolute; /* Абсолютное позиционирование */
-			  right: 0; /* Положение от правого края окна */
-			  top: 50px; /* Положение от верхнего края */
-			  width: 270px; /* Ширина колонки */
+ 			position: absolute; 
+			  right: 0; 
+			  top: 50px; 
+			  width: 270px;
  		}
  	</style>
 <br>
@@ -17,10 +17,11 @@
 	<div class="row">
 <div class="post">
 
-<div id="ed"><% if current_user.admin? %>
-				<%= link_to "Редагувати",  edit_post_path %> or
-				<%= link_to "Видалити", post_path, data: {confirm: 'Точно видалити данний пост?'}, method: :delete %>
-			<%end%>
+<div id="ed">
+	<% if current_user != nil and current_user.admin %>
+			<%= link_to "Редагувати",  edit_post_path %> or
+			<%= link_to "Видалити", post_path, data: {confirm: 'Точно видалити данний пост?'}, method: :delete %>
+	<%end%>
 </div>
 <center><%= image_tag @post.image(:medium) %></center>
 <center><h1><%= @post.title %></h1></center>

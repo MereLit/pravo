@@ -24,6 +24,7 @@ nav {
     padding: 10px;
     margin: 2px;
   }
+  .btn:not(.btn-block) { width:140px;margin-bottom:10px; }
 
 </style>
 
@@ -46,6 +47,25 @@ nav {
           <li><a href="/pages/stud">Для студента</a></li>
         </ul>
       </li>
+
+      <% if current_user != nil and current_user.admin %>
+      <li class="dropdown">
+        <p class="dropdown-toggle" data-toggle="dropdown" data: { no_turbolink: true } >Панель редагування<b class="caret"></b></p>
+        <ul class="dropdown-menu">
+          
+          <li>
+          <%= link_to new_post_path do %>
+        <i class="btn btn-danger btn-md" role="button"><span class="fa fa-plus-circle">Нова новина</i>
+         <%end%></li>
+       <li>
+        <%= link_to new_event_path do %>
+        <i class="btn btn-warning btn-md" role="button"><span class="fa fa-plus-circle">Нова подія</i>
+      <%end%>
+        </li>
+        </ul>
+      </li>
+      <%end%>
+
     </ul>
     <ul class="nav navbar-nav navbar-right">
     <% if current_user.nil? %>
