@@ -16,9 +16,10 @@ class PostcommentsController < ApplicationController
   end
 
   def destroy
-    @comment = Postcomment.find(params[:id])
+    @post = Post.find(params[:post_id])
+    @comment = @post.postcomments.find(params[:id])
     @comment.destroy
-    redirect_to article_path(params[:post_id])
+    redirect_to posts_path(params[:post_id])
   end
 
 private
