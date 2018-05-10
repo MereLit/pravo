@@ -1,0 +1,8 @@
+# ruby encoding: utf-8
+uk:
+  activerecord:
+    models:
+      post:
+      event:
+      postcomment:
+    attributes:
