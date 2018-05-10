@@ -1,0 +1,11 @@
+# ruby encoding: utf-8
+uk:
+  all_news: "Всі новини"
+  all_events: "Всі події"
+  home: "Головна сторінка"
+  information: "Інформація для вас"
+  kor_inf: "Корисна інформація"
+  entrant: "Для абітурієнта"
+  student: "Для студента"
+  log_in: "Вхід"
+  logout: "Вихід"

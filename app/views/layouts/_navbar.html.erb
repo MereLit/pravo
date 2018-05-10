@@ -34,17 +34,17 @@ nav {
       <%= image_tag("logo.png", height: '55', width: '75') %>
     </div>
     <ul class="nav navbar-nav">
-      <%= link_to "Головна сторінка", root_path, class: "navbar-brand" %>
+      <%= link_to t("home"), root_path, class: "navbar-brand" %>
       <li class="dropdown">
-        <p class="dropdown-toggle" data-toggle="dropdown" data: { no_turbolink: true } >Інформація для вас<b class="caret"></b></p>
+        <p class="dropdown-toggle" data-toggle="dropdown" data: { no_turbolink: true } ><%= t("information") %><b class="caret"></b></p>
         <ul class="dropdown-menu">
-          <li><a href="posts#index">Всі новини</a></li>
-          <li><a href="events#index">Всі події</a></li>
+          <li><a href="posts#index"><%= t("all_news") %></a></li>
+          <li><a href="events#index"><%= t("all_events") %></a></li>
           <li class="divider"></li>
-          <li><a>Корисна інформація</a></li>
+          <li><a><%= t("kor_inf") %></a></li>
           <li class="divider"></li>
-          <li><a href="/pages/abit">Для абітурієнта</a></li>
-          <li><a href="/pages/stud">Для студента</a></li>
+          <li><a href="/pages/abit"><%= t("entrant") %></a></li>
+          <li><a href="/pages/stud"><%= t("student") %></a></li>
         </ul>
       </li>
 
@@ -68,19 +68,27 @@ nav {
 
     </ul>
     <ul class="nav navbar-nav navbar-right">
+    <li>
+              <% if I18n.locale == :uk %>
+              <%= link_to 'EN', {locale: :en}%>
+              <%else%>
+              <%= link_to 'UK', {locale: :uk}%>
+              <%end %>
+            </li>
     <% if current_user.nil? %>
     <li class="tratata">
         <%= link_to user_session_path do %>
-        <i class="glyphicon glyphicon-user"></i> Вхід
+        <i class="glyphicon glyphicon-user"></i> <%= t("log_in") %>
         <%end%>
     </li>
       <% else %> 
     <li>
         <%= link_to destroy_user_session_path, method: :delete   do %>
-        <i class="glyphicon glyphicon-log-in"></i> Вийти
+        <i class="glyphicon glyphicon-log-in"></i> <%= t("logout") %>
         <%end%>
     </li>
        <% end %>
+       
     </ul>
 
   </div>
