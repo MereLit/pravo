@@ -1,15 +1,15 @@
-<h2>Надіслати повторно інструкції</h2>
+<h2>Send instructions again</h2>
 
 <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :Логін %><br />
+    <%= f.label :Login %><br />
     <%= f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Надіслати повторно інструкції" %>
+    <%= f.submit "Send instructions" %>
   </div>
 <% end %>
 
