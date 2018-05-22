@@ -57,9 +57,16 @@ nav {
           <%= link_to new_post_path do %>
         <i class="btn btn-danger btn-md" role="button"><span class="fa fa-plus-circle"><%= t("new_news") %></i>
          <%end%></li>
+
        <li>
         <%= link_to new_event_path do %>
         <i class="btn btn-warning btn-md" role="button"><span class="fa fa-plus-circle"><%= t("new_events") %></i>
+      <%end%>
+        </li>
+
+               <li>
+        <%= link_to new_rozklad_path do %>
+        <i class="btn btn-warning btn-md" role="button"><span class="fa fa-plus-circle"><%= t("new_rozklads") %></i>
       <%end%>
         </li>
         </ul>

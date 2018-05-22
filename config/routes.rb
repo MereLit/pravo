@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   resources :posts do
 	resources :postcomments
   end
+  resources :rozklads do
+  resources :predmets
+  end
   resources :events
   get "/not_permission", to: "pages#NotPermission", as:"not_permission"
   get 'pages/info'

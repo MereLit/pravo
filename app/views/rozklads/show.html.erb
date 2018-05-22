@@ -1,0 +1,19 @@
+<%= @rozklad.title %>
+
+  <% @predmets.each do |predmet|%>
+    <div class="ram">
+        <%= f.label predmet.name %>
+    </div>
+
+  <% end %>
+
+<br>
+<section>
+<% if current_user and current_user.admin %>
+  <%= form_for @predmet, url:rozklad_predmets_path(@rozklad.id) do |f| %>
+      <%= f.label "Add Predmet"%>
+    <%= f.text_field :name%> 
+   <p><%= f.submit "Send" %></p>
+  <%end%>
+<%end%>  
+</section>
