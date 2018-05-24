@@ -3,6 +3,7 @@ before_action :authenticate_user!
 
 def create
   if current_user.admin
+    params[:predmet][:category_id] = params[:category_id]
     params[:predmet][:rozklad_id] = params[:rozklad_id]
     @predmet = Predmet.create(predmet_params)
     if @predmet.save
@@ -27,7 +28,7 @@ def destroy
 private
 
   def predmet_params
-    params.require(:predmet).permit(:user_id, :name, :rozklad_id)
+    params.require(:predmet).permit(:user_id, :name, :rozklad_id, :category_id)
   end
 
 end

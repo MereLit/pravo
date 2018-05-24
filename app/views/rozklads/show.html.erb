@@ -1,19 +1,29 @@
 <%= @rozklad.title %>
-
-  <% @predmets.each do |predmet|%>
-    <div class="ram">
-        <%= f.label predmet.name %>
-    </div>
-
+<div class="row">
+  <% @categories.each do |category|%>
+  <div class="col-sm-6 col-md-4 col-lg-2 mt-4">
+    <h3><%= category.name %></h3>
+    <% @predmets.each do |predmet|%>
+      <div class="ram">
+        <%= predmet.name %>
+      </div>
+    <% end %>
+  </div>
   <% end %>
+  </div>
 
 <br>
 <section>
 <% if current_user and current_user.admin %>
-  <%= form_for @predmet, url:rozklad_predmets_path(@rozklad.id) do |f| %>
-      <%= f.label "Add Predmet"%>
-    <%= f.text_field :name%> 
+  <%= form_for :predmet, url:rozklad_predmets_path(rozklad_id: @rozklad.id) do |f| %>
+    <p><%= f.label "Add Predmet"%>
+    <%= f.text_field :name%></p>
+
+    <p><%= f.label "Category:" %>
+    <%= select_tag 'category_id', options_from_collection_for_select(Category.all, 'id', 'name') %></p>
+
    <p><%= f.submit "Send" %></p>
+
   <%end%>
 <%end%>  
 </section>

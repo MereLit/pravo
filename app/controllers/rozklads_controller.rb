@@ -10,7 +10,11 @@ before_action :authenticate_user!
   end 
 
   def show
+    @category = Category.find(params[:id])
+    @categories = Category.all
     @predmets = Predmet.where(rozklad_id: @rozklad.id)
+    @predmets = Predmet.where(category_id: @category.id)
+
   end
 
   def create
