@@ -76,6 +76,7 @@ end
 
 group :test do
     gem 'rspec-rails', '~> 3.5.0.beta'
+    gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git', branch: 'rails-5'
     gem "factory_bot_rails"
     gem 'capybara', '~> 2.13'
     
