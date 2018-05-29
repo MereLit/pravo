@@ -11,7 +11,12 @@ Rails.application.routes.draw do
   end
   resources :rozklads do
   resources :predmets
+  get 'rozklads/index'
   end
+
+  resources :infocenters
+
+  
   resources :events
   get "/not_permission", to: "pages#NotPermission", as:"not_permission"
   get 'pages/info'

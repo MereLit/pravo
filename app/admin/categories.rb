@@ -12,5 +12,5 @@ ActiveAdmin.register Category do
 #   permitted
 # end
 
-permit_params :name
+permit_params :name, :rozklad_id
 end

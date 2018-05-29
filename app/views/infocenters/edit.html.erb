@@ -1,0 +1,14 @@
+<br>
+<%= form_for @infocenter, url:infocenter_path, method: :patch,  validate: true do |f| %>
+ <% if @infocenter.errors.any?  %>
+   <% @infocenter.errors.full_messages.each do |msg| %>
+   <li><%= msg%></li>
+   <%end%>
+   <%end%>
+
+
+<%= render 'form', f:f %>
+
+
+
+<%end%>

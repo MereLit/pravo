@@ -1,6 +1,11 @@
 class RozkladsController < ApplicationController
-before_action :authenticate_user!
+before_action :authenticate_user!, except: [:index, :show]
     before_action :set_rozklad, only: [:show,:edit,:update,:destroy]
+  
+  def index
+    @rozklads = Rozklad.all
+  end
+
   def new
   if current_user.admin
     @rozklad = Rozklad.new
@@ -10,11 +15,8 @@ before_action :authenticate_user!
   end 
 
   def show
-    @category = Category.find(params[:id])
-    @categories = Category.all
+    @categories = Category.where(rozklad_id: @rozklad.id)
     @predmets = Predmet.where(rozklad_id: @rozklad.id)
-    @predmets = Predmet.where(category_id: @category.id)
-
   end
 
   def create
