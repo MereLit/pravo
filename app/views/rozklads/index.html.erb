@@ -2,7 +2,7 @@
 <div class="container">
 	<div class="row">
 		<% @rozklads.each do |rozklad|%>
-		<p><%=link_to rozklad.title, rozklad_path(rozklad.id) %></p>
+		<h3><p><%=link_to rozklad.title, rozklad_path(rozklad.id) %></p></h3>
 			<%end%>  
 		</div>
 	</div>
