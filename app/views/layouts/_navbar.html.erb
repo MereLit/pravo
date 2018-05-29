@@ -41,7 +41,14 @@ nav {
         <ul class="dropdown-menu">
           <li><a href="posts#index"><%= t("all_news") %></a></li>
           <li><a href="events#index"><%= t("all_events") %></a></li>
-          <li><a href="infocenters#index">Інфо-центр</a></li>
+
+
+
+          <li><a href="infocenters#index">Інфоцентр</a></li>
+          <li><a href="pets#index">Галерея</a></li>
+
+
+
           <li class="divider"></li>
           <li><a><%= t("kor_inf") %></a></li>
           <li class="divider"></li>
@@ -59,6 +66,14 @@ nav {
             <%= link_to new_infocenter_path do %>
               <i class="btn btn-success btn-md" role="button">
                 <span class="fa fa-plus-circle"><%= t("new_infocenter") %>
+              </i>
+            <%end%>
+          </li>
+
+          <li>
+            <%= link_to new_pet_path do %>
+              <i class="btn btn-success btn-md" role="button">
+                <span class="fa fa-plus-circle"><%= t("new_photo") %>
               </i>
             <%end%>
           </li>
