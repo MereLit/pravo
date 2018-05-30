@@ -1,0 +1,9 @@
+<div class="container">
+	<div class="row">
+	
+	<p><h3 style="font-weight: 900;">ІНФОЦЕНТР</h3></p>
+<ul>
+	<% @infocenters.each do |infocenter| %>
+
+			    <li><h4 class="card-title"><%= link_to infocenter.title, infocenter_path(infocenter.id) %></h4></li>
+	<%end%>	

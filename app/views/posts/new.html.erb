@@ -1,9 +1,23 @@
 <br>
-<center><%= form_for @post, url: posts_path, validate: true do |f| %>
-	<% if @post.errors.any? %>
-	 <% @post.errors.full_messages.each do |msg| %>
-	 	<li><%=msg%></li>
-	   <%end%>
-	 <%end%>
-	<%= render 'form', f:f%>
-<%end%></center>
+<div class="limiter">
+  <div class="container-login100">
+    <div class="wrap-login100">
+     <div class="login100-form-title" style="background-image: url('<%= asset_path('login-bg.jpg') %>');">
+    <span class="login100-form-title-1">
+          <%= t("new_news") %>
+        </span>
+        </div>
+		<div class="col-md-6 col-md-offset-3 login-box">
+
+		<center><%= form_for @post, url: posts_path, validate: true do |f| %>
+			<% if @post.errors.any? %>
+			 <% @post.errors.full_messages.each do |msg| %>
+			 	<li><%=msg%></li>
+			   <%end%>
+			 <%end%>
+			<%= render 'form', f:f%>
+		<%end%></center>
+		</div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,2 @@
+module InfocentersHelper
+end

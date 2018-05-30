@@ -1,0 +1,6 @@
+    <div class="form-group">
+            <%= f.label "Нікнейм" %><br />
+              <div class="input-group">
+                <center><%= f.text_field :nickname, autofocus: true %></center>
+              </div>
+          </div>

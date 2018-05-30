@@ -1,51 +1,30 @@
-<style>
-body, html{
-     height: 100%;
-   background-repeat: no-repeat;
-   background:url(https://i.ytimg.com/vi/4kfXjatgeEU/maxresdefault.jpg);
-   font-family: 'Oxygen', sans-serif;
-      background-size: cover;
-}
 
-.main{
-   margin:50px 15px;
-}
+<div class="limiter">
+  <div class="container-login100">
+    <div class="wrap-login100">
+      <div class="login100-form-title" style="background-image: url('<%= asset_path('login-bg.jpg') %>');">
+        <span class="login100-form-title-1">
+          Forgot your password?
+        </span>
+      </div>
+<div class="col-md-6 col-md-offset-3 login-box">
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= devise_error_messages! %>
 
-.main-center{
-  margin-top: 30px;
-  margin: 0 auto;
-  max-width: 400px;
-  padding: 10px 40px;
-  background:#009edf;
-  color: black;
-  text-shadow: none;
+          <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'Email Address', required: true %>
+          <br>
 
-}
-
-</style>
-<div class="container">
-  	<div class="row main">
-    	<div class="main-login main-center">
-	        <center>
-				<h2>Забули пароль?</h2>
-
-				<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-				  <%= devise_error_messages! %>
-
-				  <div class="form-group">
-				    <%= f.label "Логін" %><br />
-				    <div class="input-group">
-				    	<center><%= f.email_field :email, autofocus: true %></center>
-				    </div>
-				  </div>
-
-				  <div class="actions">
-				    <%= f.submit "Надіслати інструкції для відновлення паролю" %>
-				  </div>
-				<% end %>
-
-				<%= render "devise/shared/links" %>
-			</center>
+  <div class="actions">
+  <%= button_tag( :class => "btn btn-lg btn-primary btn-block") do %>
+    <i class="zmdi zmdi-sign-in m-r-xs"></i>Send instructions to the email
+    <% end %>
+  </div>
+<% end %>
+          <div class="login-links">
+            <a href="<%= new_user_session_path %>" class=""><i class="zmdi zmdi-key m-r-xs"></i>Log in</a>
+            <a href="<%= new_registration_path(resource_name) %>" class=""><i class="zmdi zmdi-account-add m-r-xs"></i>Register now</a>
+          </div>
 		</div>
-	</div>
+    </div>
+  </div>
 </div>

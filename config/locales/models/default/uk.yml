@@ -1,0 +1,33 @@
+# ruby encoding: utf-8
+uk:
+  activerecord:
+    models:
+      post:
+      event:
+      postcomment:
+      rozklad:
+      predmet:
+      user:
+      infocenter:
+      pet:  
+    attributes:
+      post: 
+        title: "Назва новини"
+        body: "Опис"
+        image: "Картинка"
+      event:
+        edate: "Дата"
+        etime: "Час"
+        venue: "Адреса"
+        venume_det: "Назва місцевини"
+        etupe: "Тип"
+        ecost: "Ціна"
+        einfo: "Детальна інформація"
+        etitle: "Назва заходу"
+      user:
+        email: "Е-майл"
+        password: "Пароль"
+      infocenter:
+        body: "Опис"
+      pet:
+        image: "Картинка"        

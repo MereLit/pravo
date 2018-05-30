@@ -31,6 +31,7 @@
     width: 5px;
 }
 
+
 .myfooter .social-icon{padding:0px;margin:0px;}
 .myfooter .social-icon a{display:inline-block;color:#fff;font-size:25px;padding:5px;}
 .myfooter .acount-icon a{display:block;color:#fff;font-size:18px;padding:5px;text-decoration:none;}
@@ -93,58 +94,30 @@
   -o-transform: scale(1.1) rotate(360deg);
 }
 
-.myfooter .social-circle li a {
-  display:inline-block;
-  position:relative;
-  margin:0 auto 0 auto;
-  -moz-border-radius:50%;
-  -webkit-border-radius:50%;
-  border-radius:50%;
-  text-align:center;
-  width: 50px;
-  height: 50px;
-  font-size:20px;
-}
-
-.myfooter .social-circle i {
-  color: #fff;
-  -webkit-transition: all 0.8s;
-  -moz-transition: all 0.8s;
-  -o-transition: all 0.8s;
-  -ms-transition: all 0.8s;
-  transition: all 0.8s;
-}
 .category{
 	color: white;
 }
 </style>
-<br>
 <footer class="myfooter">
     <div class="container">
       <div class="row">
         <div class="col-sm-4">
-          <h4 class="title-widget">Створення факультету</h4>
-          <p>Кафедра міжнародного права та міжнародних відносин створена у 1997 р. у структурі  Ужгородського державного інституту інформатики, економіки і права, який у 2004 р., реорганізований в Закарпатський державний університет IV рівня акредитації.</p>
-          <ul class="social social-circle">
-            <li> <a href="#" class="icoFacebook"><i class="fa fa-facebook"></i></a></li>
-            <li> <a href="#" class="icoTwitter"> <i class="fa fa-twitter"></i> </a> </li>
-            <li> <a href="#" class="icoGoogle"> <i class="fa fa-google-plus"></i> </a> </li>
-            <li> <a href="#" class="icoRss"> <i class="fa fa-youtube"></i> </a> </li>
-          </ul>
-        </div>
-        <div class="col-sm-4">
-          <h4 class="title-widget">Якась інформація</h4>
-          <span class="acount-icon">          
-            <a href="#"><i class="fa fa-google-plus"></i> Написати нам</a>
-            <a href="#"><i class="fa fa-info" aria-hidden="true"></i> Про нас</a>
-            <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Для студентів</a>
-            <a href="#"><i class="fa fa-globe" aria-hidden="true"></i> Тест</a>           
+          <h4 class="title-widget"><%= t("contact_us") %></h4>
+          <span class="acount-icon">
+            <a href=""><i class="fa fa-google-plus"></i><%= t("write_to_us") %></a>
+            <a href="http://www.uzhnu.edu.ua/"><i class="fa fa-university"></i><%= t("UzhNU") %></a>
           </span>
         </div>
         <div class="col-sm-4">
-          <h4 class="title-widget">Інформація</h4>
+          <h4 class="title-widget"><%= t("information_about_us") %></h4>
+          <span class="acount-icon">
+            <a href="/pages/info"><i class="fa fa-info" aria-hidden="true"></i><%= t("creating_a_faculty") %></a>         
+          </span>
+        </div>
+        <div class="col-sm-4">
+          <h4 class="title-widget"><%= t("university_administration") %></h4>
           <div class="category">
-            <span>Ректорат: <br>
+            <span>
             Адреса: Україна, Закарпатська обл., м. Ужгород, пл. Народна, 3<br>
             Телефон: +38 (03122) 3-33-41<br>
 			Факс: +38 (03122) 3-42-02<br><br>
@@ -157,6 +130,6 @@
       </div>
       <hr>
       
-      <div class="row text-center"> © 2018. Кафедра міжнародного права</div>
+      <div class="row text-center"> © 2018. <%= t("department_of_international_law") %></div>
     </div> 
 </footer>
