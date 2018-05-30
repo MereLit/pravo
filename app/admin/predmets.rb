@@ -12,4 +12,5 @@ ActiveAdmin.register Predmet do
 #   permitted
 # end
 
+permit_params :name
 end
