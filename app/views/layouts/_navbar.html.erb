@@ -35,20 +35,15 @@ nav {
     </div>
     <ul class="nav navbar-nav">
       <%= link_to t("home"), root_path, class: "navbar-brand" %>
+
       <%= link_to "Розклад", rozklads_path, class: "navbar-brand" %>
       <li class="dropdown">
         <p class="dropdown-toggle" data-toggle="dropdown" data: { no_turbolink: true } ><%= t("information") %><b class="caret"></b></p>
         <ul class="dropdown-menu">
           <li><a href="posts#index"><%= t("all_news") %></a></li>
           <li><a href="events#index"><%= t("all_events") %></a></li>
-
-
-
           <li><a href="infocenters#index">Інфоцентр</a></li>
           <li><a href="pets#index">Галерея</a></li>
-
-
-
           <li class="divider"></li>
           <li><a><%= t("kor_inf") %></a></li>
           <li class="divider"></li>
@@ -79,6 +74,7 @@ nav {
           </li>
           
           <li>
+
             <%= link_to new_post_path do %>
               <i class="btn btn-danger btn-md" role="button">
                 <span class="fa fa-plus-circle"><%= t("new_news") %>
@@ -109,6 +105,14 @@ nav {
               </i>
             <%end%>
           </li>
+          <%= link_to new_post_path do %>
+        <i class="btn btn-danger btn-md" role="button"><span class="fa fa-plus-circle"><%= t("new_news") %></i>
+         <%end%></li>
+       <li>
+        <%= link_to new_event_path do %>
+        <i class="btn btn-warning btn-md" role="button"><span class="fa fa-plus-circle"><%= t("new_events") %></i>
+      <%end%>
+        </li>
         </ul>
       </li>
       <%end%>
