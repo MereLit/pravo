@@ -1,0 +1,8 @@
+<center><%= form_for @rozklad, url: rozklads_path do |f| %>
+  <% if @rozklad.errors.any? %>
+   <% @rozklad.errors.full_messages.each do |msg| %>
+     <li><%=msg%></li>
+     <%end%>
+   <%end%>
+  <%= render 'rozklads/form', f:f%>
+<%end%></center>

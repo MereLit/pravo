@@ -1,0 +1,30 @@
+ 	<style>
+ 		.post{
+ 			width: 800px;
+ 			background-color: white;
+ 			padding:0px 0px 0px 0px;
+ 		}
+
+ 		.right_block{
+ 			position: absolute; 
+			  right: 0; 
+			  top: 50px; 
+			  width: 270px;
+ 		}
+ 	</style>
+<br>
+<div class="container">
+	<div class="row">
+		<div class="post">
+
+			<div id="ed">
+				<% if current_user != nil and current_user.admin %>
+						<%= link_to "Edit",  edit_infocenter_path %> or
+						<%= link_to "Delete", infocenter_path, data: {confirm: 'Точно видалити цю інформацію?'}, method: :delete %>
+				<%end%>
+			</div>
+			<center><h1><%= @infocenter.title %></h1></center>
+			<p><%= sanitize @infocenter.body %></p>
+			<hr>
+		</div>	
+		<br>

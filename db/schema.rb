@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180503113331) do
+ActiveRecord::Schema.define(version: 20180529155739) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -43,6 +43,13 @@ ActiveRecord::Schema.define(version: 20180503113331) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "rozklad_id"
+  end
+
   create_table "events", force: :cascade do |t|
     t.datetime "edate"
     t.datetime "etime"
@@ -54,6 +61,21 @@ ActiveRecord::Schema.define(version: 20180503113331) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "etitle"
+  end
+
+  create_table "infocenters", force: :cascade do |t|
+    t.string "title"
+    t.string "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pets", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "postcomments", force: :cascade do |t|
@@ -74,6 +96,20 @@ ActiveRecord::Schema.define(version: 20180503113331) do
     t.string "image_content_type"
     t.integer "image_file_size"
     t.datetime "image_updated_at"
+  end
+
+  create_table "predmets", force: :cascade do |t|
+    t.integer "rozklad_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "category_id"
+  end
+
+  create_table "rozklads", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

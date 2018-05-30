@@ -1,0 +1,2 @@
+class Infocenter < ApplicationRecord
+end
