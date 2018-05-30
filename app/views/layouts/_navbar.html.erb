@@ -36,14 +36,15 @@ nav {
     <ul class="nav navbar-nav">
       <%= link_to t("home"), root_path, class: "navbar-brand" %>
 
-      <%= link_to "Розклад", rozklads_path, class: "navbar-brand" %>
+      <%= link_to  rozklads_path, class: "navbar-brand" do %>
+      <%= t("schedule") %><%end%>
       <li class="dropdown">
         <p class="dropdown-toggle" data-toggle="dropdown" data: { no_turbolink: true } ><%= t("information") %><b class="caret"></b></p>
         <ul class="dropdown-menu">
           <li><a href="posts#index"><%= t("all_news") %></a></li>
           <li><a href="events#index"><%= t("all_events") %></a></li>
-          <li><a href="infocenters#index">Інфоцентр</a></li>
-          <li><a href="pets#index">Галерея</a></li>
+          <li><a href="infocenters#index"><%= t("infocenters") %></a></li>
+          <li><a href="pets#index"><%= t("gallery") %></a></li>
           <li class="divider"></li>
           <li><a><%= t("kor_inf") %></a></li>
           <li class="divider"></li>
@@ -93,7 +94,7 @@ nav {
           <li>
             <%= link_to new_rozklad_path do %>
               <i class="btn btn-info btn-md" role="button">
-                <span class="fa fa-plus-circle"><%= t("new_rozklads") %>
+                <span class="fa fa-plus-circle"><%= t("new_schedule") %>
               </i>
             <%end%>
           </li>
@@ -101,20 +102,11 @@ nav {
           <li>
             <%= link_to rozklads_path do %>
               <i class="btn btn-info btn-md" role="button">
-                <span class="fa fa-plus-circle"><%= t("edit rozklad") %>
+                <span class="fa fa-plus-circle"><%= t("edit_schedule") %>
               </i>
             <%end%>
           </li>
-          <%= link_to new_post_path do %>
-        <i class="btn btn-danger btn-md" role="button"><span class="fa fa-plus-circle"><%= t("new_news") %></i>
-         <%end%></li>
-       <li>
-        <%= link_to new_event_path do %>
-        <i class="btn btn-warning btn-md" role="button"><span class="fa fa-plus-circle"><%= t("new_events") %></i>
-      <%end%>
-        </li>
         </ul>
-      </li>
       <%end%>
 
     </ul>

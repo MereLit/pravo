@@ -2,17 +2,8 @@
 	<div class="row">
 	
 	<p><h3 style="font-weight: 900;">ІНФОЦЕНТР</h3></p>
+<ul>
 	<% @infocenters.each do |infocenter| %>
-	 <div class="col-sm-6 col-md-4 col-lg-3 mt-4">     
-		<div class="card" style="width: 25rem;">
-		     <div class="card-block">
-			    <h4 class="card-title"><%= link_to infocenter.title, infocenter_path(infocenter.id) %></h4>
-			    
-			    <center><%= link_to "Дізнатись більше", infocenter_path(infocenter.id), class: "btn btn-default" %></center>
-		     </div>
-		</div>
-	 </div>
+
+			    <li><h4 class="card-title"><%= link_to infocenter.title, infocenter_path(infocenter.id) %></h4></li>
 	<%end%>	
-	</div>
-</div>
-<br>

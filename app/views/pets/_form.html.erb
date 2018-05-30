@@ -1,3 +1,13 @@
+<br>
+<div class="limiter">
+  <div class="container-login100">
+    <div class="wrap-login100">
+     <div class="login100-form-title" style="background-image: url('<%= asset_path('login-bg.jpg') %>');">
+    <span class="login100-form-title-1">
+          <%= t("new_photo") %>
+        </span>
+        </div>
+    <div class="col-md-6 col-md-offset-3 login-box">
 <%= form_for @pet, html: { multipart: true } do |f| %>
   <% if @pet.errors.any? %>
     <div id="error_explanation">
@@ -11,20 +21,15 @@
     </div>
   <% end %>
  
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
+    <%= f.text_field :name, autofocus: true, class: 'form-control', placeholder: 'Title', required: true  %>
+
   <div class="field">
     <%= f.label :image %><br>
     <%= f.file_field :image %>
   </div>
- 
-  <div class="field">
-    <%= f.submit "Створити Photo"%>
-  </div>
+ <br>
+  <%= button_tag( :class => "btn btn-lg btn-primary btn-block") do %>
+            <i class="zmdi zmdi-check m-r-xs"></i> <%= t("save") %>
+          <% end %>
+
 <% end %>
