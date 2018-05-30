@@ -1,10 +1,10 @@
-	<p><%= f.label :title %></p>
-  	<%= f.text_field :title %><br />
-	<br/>
+  	<%= f.text_field :title, autofocus: true, class: 'form-control', placeholder: 'Title', required: true  %><br />
   	<p><%= f.label :body %></p>
-	<%= f.text_area :body, :class => "tinymce", :rows => 10, :cols => 70 %><br/>
+	<%= f.text_area :body, :class => "tinymce", :rows => 10, :cols => 70, autofocus: true %><br/>
 	<%= tinymce %><br/>
   	<p><%= f.label :image %></p>
   	<%= f.file_field :image %><br/>
  	<br/>
-  	<p><%= f.submit "Зберегти" %></p>
+	<%= button_tag( :class => "btn btn-lg btn-primary btn-block") do %>
+            <i class="zmdi zmdi-check m-r-xs"></i> <%= t("save") %>
+          <% end %>

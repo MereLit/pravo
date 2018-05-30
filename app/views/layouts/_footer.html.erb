@@ -102,20 +102,20 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-4">
-          <h4 class="title-widget">Зв'язок з нами:</h4>
+          <h4 class="title-widget"><%= t("contact_us") %></h4>
           <span class="acount-icon">
-            <a href=""><i class="fa fa-google-plus"></i> Написати нам</a>
-            <a href="http://www.uzhnu.edu.ua/"><i class="fa fa-university"></i>УЖНУ</a>
+            <a href=""><i class="fa fa-google-plus"></i><%= t("write_to_us") %></a>
+            <a href="http://www.uzhnu.edu.ua/"><i class="fa fa-university"></i><%= t("UzhNU") %></a>
           </span>
         </div>
         <div class="col-sm-4">
-          <h4 class="title-widget">Інформація про нас:</h4>
+          <h4 class="title-widget"><%= t("information_about_us") %></h4>
           <span class="acount-icon">
-            <a href="/pages/info"><i class="fa fa-info" aria-hidden="true"></i>Створення факультету</a>         
+            <a href="/pages/info"><i class="fa fa-info" aria-hidden="true"></i><%= t("creating_a_faculty") %></a>         
           </span>
         </div>
         <div class="col-sm-4">
-          <h4 class="title-widget">Ректорат</h4>
+          <h4 class="title-widget"><%= t("university_administration") %></h4>
           <div class="category">
             <span>
             Адреса: Україна, Закарпатська обл., м. Ужгород, пл. Народна, 3<br>
@@ -130,6 +130,6 @@
       </div>
       <hr>
       
-      <div class="row text-center"> © 2018. Кафедра міжнародного права</div>
+      <div class="row text-center"> © 2018. <%= t("department_of_international_law") %></div>
     </div> 
 </footer>

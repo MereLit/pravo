@@ -1,20 +1,30 @@
-<br>
-<div>
-	<center><h3>To recover your password, you need to enter your E-mail (which you specified when registering)</h3></center>
-</div>
-<h2>Forgot your password?</h2>
 
+<div class="limiter">
+  <div class="container-login100">
+    <div class="wrap-login100">
+      <div class="login100-form-title" style="background-image: url('<%= asset_path('login-bg.jpg') %>');">
+        <span class="login100-form-title-1">
+          Forgot your password?
+        </span>
+      </div>
+<div class="col-md-6 col-md-offset-3 login-box">
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+          <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'Email Address', required: true %>
+          <br>
 
   <div class="actions">
-    <%= f.submit "Send instructions to the email" %>
+  <%= button_tag( :class => "btn btn-lg btn-primary btn-block") do %>
+    <i class="zmdi zmdi-sign-in m-r-xs"></i>Send instructions to the email
+    <% end %>
   </div>
 <% end %>
-
-<%= render "devise/shared/links" %>
+          <div class="login-links">
+            <a href="<%= new_user_session_path %>" class=""><i class="zmdi zmdi-key m-r-xs"></i>Log in</a>
+            <a href="<%= new_registration_path(resource_name) %>" class=""><i class="zmdi zmdi-account-add m-r-xs"></i>Register now</a>
+          </div>
+		</div>
+    </div>
+  </div>
+</div>

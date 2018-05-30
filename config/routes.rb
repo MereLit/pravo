@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   resources :predmets
   get 'rozklads/index'
   end
+  
   resources :pets
+  
   resources :infocenters
 
   
@@ -22,12 +24,6 @@ Rails.application.routes.draw do
   get 'pages/abit'
   get 'pages/stud' 
 
-  end
-  resources :events
-  get "/not_permission", to: "pages#NotPermission", as:"not_permission"
-  get 'pages/info'
-  get 'pages/abit'
-  get 'pages/stud'  
 end
 end
  
