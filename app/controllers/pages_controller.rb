@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   @events = Event.all.order(created_at: :DESC)
   @pets = Pet.all.order(created_at: :DESC)
   end
-
+ 
   def info
   	@users = User.all
   end

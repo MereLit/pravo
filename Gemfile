@@ -52,6 +52,7 @@ gem 'client_side_validations'
 #editor
 gem 'tinymce-rails'
 
+gem 'simplecov', require: false, group: :test
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
