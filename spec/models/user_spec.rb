@@ -33,12 +33,12 @@ require 'rails_helper'
 
 
 
-			it "unsuccessful save" do
+			# it "unsuccessful save" do
 
-				user = User.new(nickname: "nickname", password: "qwerty123",  email: "student@gmail.com").save
-				expect(user).to eq(false)
+			# 	user = User.new(nickname: "nickname", password: "qwerty123",  email: "student@gmail.com").save
+			# 	expect(user).to eq(false)
 
-			end
+			# end
 
 
 
