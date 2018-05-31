@@ -21,7 +21,7 @@ class PostsController < ApplicationController
       @comments = Postcomment.where(post_id: @post.id)
       pp @comments
   end
-
+  
   def create
   	@post = current_user.posts.build(post_params)
   	if @post.save
