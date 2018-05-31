@@ -877,8 +877,8 @@
         null,
         null,
         1,
-        4,
-        4,
+        5,
+        5,
         null,
         null,
         null,
@@ -1668,6 +1668,15 @@
         null,
         1,
         null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
         null
       ],
       "/home/peter/sites/pravo/app/controllers/rozklads_controller.rb": [
@@ -1676,7 +1685,7 @@
         1,
         null,
         1,
-        0,
+        1,
         null,
         null,
         1,
@@ -2131,6 +2140,6 @@
         null
       ]
     },
-    "timestamp": 1527752694
+    "timestamp": 1527753324
   }
 }
