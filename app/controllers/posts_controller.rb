@@ -15,7 +15,7 @@ class PostsController < ApplicationController
   end
 
   def show
-<<<<<<< HEAD
+
     @post.update(visit: @post.visit+1)
     pp @post
      @posts = Post.all.order(created_at: :DESC)
@@ -24,15 +24,6 @@ class PostsController < ApplicationController
       pp @comments
   end
 
-=======
-    pp @post
-     @posts = Post.all.order(created_at: :DESC)
-     pp @posts
-      @comments = Postcomment.where(post_id: @post.id)
-      pp @comments
-  end
-  
->>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
   def create
   	@post = current_user.posts.build(post_params)
   	if @post.save
@@ -68,8 +59,3 @@ class PostsController < ApplicationController
   		@post = Post.find(params[:id])
   	end
 end
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
