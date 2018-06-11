@@ -4,21 +4,12 @@
 	<section id="posts">
 		<div class="col-sm-6 col-md-8 col-lg-9 mt-4">  
 		<h3 style="font-weight: 900;"><%= t("news") %> |<i class="link"> <%= link_to t("all_news"), posts_path %></i></h3>
-
 		<% @posts[0..2].each do |post| %>
 		    <div class="col-sm-6 col-md-8 col-lg-4 mt-9">
 			<div class="card" style="width: 25rem;">
-<<<<<<< HEAD
 			  <div class="card-img-top"><%= image_tag post.image, height: '190' %></div>
 			     <div class="card-block">
 				    <h4 class="card-title"><%= link_to post.title, post_path(post.id) %></h4>
-=======
-			  <div class="card-img-top"><%= image_tag post.image(:thumb) %></div>
-			     <div class="card-block">
-				    <h4 class="card-title"><%= link_to post.title, post_path(post.id) %></h4>
-				    
-				    <center><%= link_to "Дізнатись більше", post_path(post.id), class: "btn btn-default" %></center>
->>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
 			     </div>
 			</div>
 		 	</div>
@@ -32,17 +23,9 @@
 		<% @events[0..2].each do |event| %>
 				<ul class="event-list">
 					<li>
-<<<<<<< HEAD
 						<time datetime="12-20">
 							<span class="day"><%= event.edate.day %></span>
 							<span class="month"><%= event.edate.month %></span>
-=======
-						<time datetime="2014-07-20">
-							<span class="day"><%= event.edate.day %></span>
-							<span class="month"><%= event.edate.month %></span>
-							<span class="year"><%= event.edate.year %></span>
-							<span class="time">ALL DAY</span>
->>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
 						</time>
 						<div class="info">
 							<h2 class="title"><%= link_to event.etitle, event_path(event.id) %></h2>
@@ -59,7 +42,6 @@
 <br>
 <div class="container">
 <p><h3 style="font-weight: 900; margin-left: 65px;"><%= t("gallery") %> | <i class="link"><%= link_to t("all_photo"), pets_path %></i></h3></p>
-<<<<<<< HEAD
   <%= link_to pets_path do %>
 <div class="gallery">
   <% @pets[0..2].each do |pet| %>
@@ -69,7 +51,7 @@
   <%end%>
 </div>
 <%end%>
-=======
+
 
 <div class="gallery">
 
@@ -128,4 +110,4 @@ popup.init()
 //# sourceURL=pen.js
 </script>
 </div>
->>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
+
