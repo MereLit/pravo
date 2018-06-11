@@ -1,0 +1,23 @@
+<br>
+<div class="limiter">
+  <div class="container-login100">
+    <div class="wrap-login100">
+     <div class="login100-form-title" style="background-image: url('<%= asset_path('login-bg.jpg') %>');">
+    <span class="login100-form-title-1">
+          <%= t("edit_rozklad") %>
+        </span>
+        </div>
+		<div class="col-md-6 col-md-offset-3 login-box">
+<%= form_for @rozklad, url:rozklad_path, method: :patch,  validate: true do |f| %>
+ <% if @rozklad.errors.any?  %>
+   <% @rozklad.errors.full_messages.each do |msg| %>
+   <li><%= msg%></li>
+   <%end%>
+   <%end%>
+
+
+<%= render 'form', f:f %>
+
+
+
+<%end%>

@@ -11,6 +11,10 @@ gem 'devise'
 #admin panel
 gem 'activeadmin'
 
+#photo
+gem 'carrierwave', '~> 0.10.0'
+gem 'mini_magick', '~> 4.3'
+
 #CSS gem
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'jquery-rails'

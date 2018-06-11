@@ -1,0 +1,33 @@
+ 	<style>
+ 		.post{
+ 			width: 800px;
+ 			background-color: white;
+ 			padding:0px 0px 0px 0px;
+ 		}
+
+ 		.right_block{
+ 			position: absolute; 
+			  right: 0; 
+			  top: 50px; 
+			  width: 270px;
+ 		}
+ 	</style>
+<br>
+<div class="container">
+	<div class="row">
+		<div class="post">
+
+			<div id="ed">
+				<% if current_user != nil and current_user.admin %>
+						<%= link_to "Edit",  edit_prepod_path %> or
+						<%= link_to "Delete", prepod_path, data: {confirm: 'Точно видалити це?'}, method: :delete %>
+				<%end%>
+			</div>
+			<% if @prepod.image != 0 %>
+			<center><%= image_tag @prepod.image(:medium) %></center>
+			<%end%>
+			<center><h1><%= @prepod.name %></h1></center>
+			<p><%= sanitize @prepod.description %></p>
+			<hr>
+		</div>	
+		<br>

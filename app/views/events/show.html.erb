@@ -1,6 +1,11 @@
 <style>
 </style>
 <br>
+<div id="ed">
+    <% if current_user != nil and current_user.admin %>
+            <%= link_to "Редагувати",  edit_event_path %> or
+            <%= link_to "Видалити", event_path, data: {confirm: 'Точно видалити цю подію??'}, method: :delete %>
+    <%end%>
 <div class="container">
 <p><h2><%= @event.etitle %></h2> <hr> 
 <div class="row">

@@ -1,0 +1,36 @@
+<br>
+<h1><center><%= @rozklad.title %></center></h1>
+<div class="row">
+  <% @categories.each do |category|%>
+      <% @i=1 %>
+  <div class="col-sm-6 col-md-4 col-lg-2 mt-4">
+    <h3><%= category.name %></h3>
+    <% category.predmets.each do |predmet|%>
+
+      <div class="ram">
+        <%= @i.to_s + " пара: " %><%= predmet.name %>
+      </div>
+      <% @i+=1 %>
+    <% end %>
+  </div>
+  <% end %>
+  </div>
+
+<br>
+<section>
+<% if current_user and current_user.admin %>
+  <%= form_for :predmet, url:rozklad_predmets_path(rozklad_id: @rozklad.id) do |f| %>
+    <p><%= f.label "Add Predmet"%>
+    <%= f.text_field :name%></p>
+
+    <p><%= f.label "Category:" %>
+    <%= select_tag 'category_id', options_from_collection_for_select(Category.where(rozklad_id: @rozklad.id), 'id', 'name') %></p>
+
+    <p><%= link_to "Edit",  edit_rozklad_path %> or
+            <%= link_to "Delete", rozklad_path, data: {confirm: 'Точно видалити данний пост?'}, method: :delete %></p>
+
+   <p><%= f.submit "Send" %></p>
+
+  <%end%>
+<%end%>  
+</section>

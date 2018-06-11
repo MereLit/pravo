@@ -1,0 +1,9 @@
+<br>
+<div class="container">
+	<div class="row">
+		<h4>В дужках вказаний номер аудиторії</h4>
+		<% @rozklads.each do |rozklad|%>
+		<h3><p><%=link_to rozklad.title, rozklad_path(rozklad.id) %></p></h3>
+			<%end%>  
+		</div>
+	</div>

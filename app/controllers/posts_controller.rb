@@ -13,23 +13,23 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all.order(created_at: :DESC)
   end
-    
-  
 
   def show
+    @post.update(visit: @post.visit+1)
+    pp @post
      @posts = Post.all.order(created_at: :DESC)
-      @comments = Postcomment.where(post_id: @post.id)
+     pp @posts
+      @comments = Postcomment.where(post_id: @post.id).order(created_at: :DESC)
+      pp @comments
   end
 
   def create
-    params[:post][:user_id]=current_user.id
-  	@post = Post.create(post_params)
+  	@post = current_user.posts.build(post_params)
   	if @post.save
   		redirect_to root_path
   	else
   		render 'new'
   	end
-
   end
   
   def destroy
@@ -39,7 +39,6 @@ class PostsController < ApplicationController
 
   def edit
     if current_user.admin
-
     else
       redirect_to not_permission_path
     end
@@ -47,16 +46,17 @@ class PostsController < ApplicationController
 
   def update
   	@post.update(post_params)
-  	redirect_to root_path
+  	redirect_to post_path
   end
 
   private
   	def post_params
   		params.require(:post).permit(:user_id,:title,:body,:image)
-	
   	end
 
   	def set_post
   		@post = Post.find(params[:id])
   	end
 end
+
+

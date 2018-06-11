@@ -1,82 +1,74 @@
- 	<style>
- 		.post{
- 			width: 800px;
- 			background-color: white;
- 			padding:0px 0px 0px 0px;
- 		}
-
- 		.right_block{
- 			position: absolute; /* Абсолютное позиционирование */
-			  right: 0; /* Положение от правого края окна */
-			  top: 50px; /* Положение от верхнего края */
-			  width: 270px; /* Ширина колонки */
- 		}
- 	</style>
 <br>
 <div class="container">
 	<div class="row">
-<div class="post">
-
-<div id="ed"><% if current_user.admin? %>
-				<%= link_to "Редагувати",  edit_post_path %> or
-				<%= link_to "Видалити", post_path, data: {confirm: 'Точно видалити данний пост?'}, method: :delete %>
+		<div class="post">
+		<div class="[ col-xs-12  col-sm-11 .col-md-11 .col-lg-11 ]">
+			<div id="ed">
+				<% if current_user != nil and current_user.admin %>
+						<%= link_to "Edit",  edit_post_path %> or
+						<%= link_to "Delete", post_path, data: {confirm: 'Точно видалити данний пост?'}, method: :delete %>
+				<%end%>
+			</div>
+			<% if @post.image != 0 %>
+			<center><%= image_tag @post.image(:medium), alt:"" %></center>
 			<%end%>
+			<center><h1><%= @post.title %></h1></center>
+			<center><h6><%= @post.created_at.strftime('%b %d %Y') %></h6></center>
+			<p><%= sanitize @post.body %></p>
+			<p><h3 style="text-align: center;">ОСТАННІ НОВИНИ</h3></p>
+			<% @posts[0..3].each do |post| %>
+				<div class="[ col-xs-12  col-sm-5 .col-md-5 .col-lg-5 otn ]">
+			<div class="card" style="width: 25rem;">
+		  	<div class="card-img-top"><%= image_tag post.image, height: '190'%></div>
+			     <div class="card-block">
+				    <h4 class="card-title"><%= link_to post.title, post_path(post.id) %></h4>
+			     </div>
+			</div>
+			 </div>
+			<%end%>	
+			</div>
+			</div>
+			<div class="[ col-xs-12  col-sm-1 .col-md-1 .col-lg-1]">
+			<div class="right_block">
+			 <small>
+                <div class="statistics">
+                    <p><span class="label label-default">Visitas <%= @post.visit %></span></p>
+                    <p><span class="label label-default">Comentarios <%= @post.com %></span></p>
+                </div>
+                </small>
+			<% @comments.each do |comment|%>
+				<div class="bb">
+					 Користувач <b><%= comment.user.nickname %></b> написав:</p>
+					 <div class = "bord">
+						<i><%= comment.text %></i>
+					</div>
+					<div class="time"><span class="glyphicon glyphicon-time"></span>
+						<small><%= comment.created_at.strftime('%b %d, %Y') %></small>
+					</div>
+					<% if current_user != nil and current_user.admin %>
+					<%= link_to 'Destroy', [comment.post, comment], :confirm => 'Are you sure?', method: :delete %>
+					<%end%>
+				</div>
+				<% end %>
+				<section>
+				<%if current_user !=nil %>
+					<%= form_for :postcomment, url: post_postcomments_path(@post.id) do |f| %>
+					<% if flash[:notice] %>
+					  <div class="notice"> <%= flash[:notice] %> </div>
+					<% end %>
+
+					<div class="com">
+						<p><%= f.label "Коментарь" %></p>
+						<%= f.text_area :text,  class: "content-field", placeholder: "Add a comment"%><br />
+					 	<p><%= f.submit "Відправити" %></p>
+					 </div>
+					 <%end%>
+				<%end%>
+				</section>
+				</div>
+		</div>
+	</div>
 </div>
-<center><%= image_tag @post.image(:medium) %></center>
-<center><h1><%= @post.title %></h1></center>
-<center><h6><%= @post.created_at.strftime('%b %d %Y') %></h6></center>
-<p><%= sanitize @post.body %></p>
-<hr>
-
-
-<% @comments.each do |comment|%>
-<div class="bb">
- Користувач <b><%= comment.user.nickname %></b> написав:</p>
- <div class = "bord">
-<i><%= comment.text %></i>
-</div>
-<div class="time"><span class="glyphicon glyphicon-time"></span>
-<small><%= comment.created_at.strftime('%b %d, %Y') %></small></div>
-<%= link_to 'Видалити', [comment.post, comment], :confirm => 'Ви впевнені?', :method => :delete %>
-</div>
-<% end %>
-
-<%if current_user !=nil %>
-<%= form_for :postcomment, url: post_postcomments_path(@post.id) do |f| %>
-<% if flash[:notice] %>
-  <div class="notice"> <%= flash[:notice] %> </div>
-<% end %>
-
-<div class="com">
-	<p><%= f.label "Коментарь" %></p>
-	<%= f.text_area :text,  class: "content-field", placeholder: "Add a comment"%><br />
- 
-
- <p><%= f.submit "Відправити" %></p>
- </div>
- <%end%>
-<%end%>
-</div>
-
 <br>
 
 
-	<div class="right_block">
-		<p><h3 style="text-align: center;">ОСТАННІ НОВИНИ</h3></p>
-	<% @posts[0..2].each do |post| %>
-			<div class="[ col-xs-1 col-sm-offset--1 col-sm-9 ]">
-		<div class="card" style="width: 25rem;">
-		  <div class="card-img-top"><%= image_tag post.image(:thumb) %></div>
-		     <div class="card-block">
-			    <h4 class="card-title"><%= link_to post.title, post_path(post.id) %></h4>
-			    
-			    <center><%= link_to "Дізнатись більше", post_path(post.id), class: "btn btn-default" %></center>
-		     </div>
-		</div>
-		<br>
-	 </div>
-	 <br>
-	<%end%>	
-	</div>
-	</div>
-	</div>

@@ -1,0 +1,35 @@
+<br>
+<div class="limiter">
+  <div class="container-login100">
+    <div class="wrap-login100">
+     <div class="login100-form-title" style="background-image: url('<%= asset_path('login-bg.jpg') %>');">
+    <span class="login100-form-title-1">
+          <%= t("new_photo") %>
+        </span>
+        </div>
+    <div class="col-md-6 col-md-offset-3 login-box">
+<%= form_for @pet, html: { multipart: true } do |f| %>
+  <% if @pet.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pet.errors.count, "error") %> prohibited this pet from being saved:</h2>
+ 
+      <ul>
+      <% @pet.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+    <%= f.text_field :name, autofocus: true, class: 'form-control', placeholder: 'Title', required: true  %>
+
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
+  </div>
+ <br>
+  <%= button_tag( :class => "btn btn-lg btn-primary btn-block") do %>
+            <i class="zmdi zmdi-check m-r-xs"></i> <%= t("save") %>
+          <% end %>
+
+<% end %>

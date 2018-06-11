@@ -1,0 +1,10 @@
+  	<%= f.text_field :name, autofocus: true, class: 'form-control', placeholder: 'Name', required: true  %><br />
+  	<p><%= f.label :description %></p>
+	<div class="tiny"><%= f.text_area :description, :class => "tinymce", :rows => 10, :cols => 70, autofocus: true %><br/>
+	<%= tinymce %><br/></div>
+  	<p><%= f.label :image %></p>
+  	<%= f.file_field :image %><br/>
+ 	<br/>
+	<%= button_tag( :class => "btn btn-lg btn-primary btn-block") do %>
+            <i class="zmdi zmdi-check m-r-xs"></i> <%= t("save") %>
+          <% end %>

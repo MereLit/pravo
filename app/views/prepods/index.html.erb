@@ -1,0 +1,19 @@
+<div class="container">
+	<div class="row">
+	
+	<p><h3 style="font-weight: 900;">Проба</h3></p>
+	<% @prepods.each do |prepod| %>
+	 <div class="col-sm-6 col-md-4 col-lg-3 mt-4">     
+		<div class="card" style="width: 25rem;">
+		  <div class="card-img-top"><%= image_tag prepod.image(:thumb), alt: "" %></div>
+		     <div class="card-block">
+			    <h4 class="card-title"><%= link_to prepod.name, prepod_path(prepod.id) %></h4>
+			    
+			    <center><%= link_to "Дізнатись більше", prepod_path(prepod.id), class: "btn btn-default" %></center>
+		     </div>
+		</div>
+	 </div>
+	<%end%>	
+	</div>
+</div>
+<br>
