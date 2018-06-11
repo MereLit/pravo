@@ -19,7 +19,6 @@ def create
   end
 end
 
-<<<<<<< HEAD
 def edit
   if current_user.admin
     else
@@ -34,14 +33,6 @@ def destroy
   redirect_to rozklad_path(params[:rozklad_id])
 end
 
-=======
-def destroy
-    @rozklad = Rozklad.find(params[:rozklad_id])
-    @predmet = @rozklad.predmet.find(params[:id])
-    @predmet.destroy
-    redirect_to rozklad_path(@rozklad)
-  end
->>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
 private
 
   def predmet_params
