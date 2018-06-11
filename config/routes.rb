@@ -14,9 +14,13 @@ Rails.application.routes.draw do
   end
   
   resources :pets
+<<<<<<< HEAD
 
   resources :prepods
 
+=======
+  
+>>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
   resources :infocenters
 
   

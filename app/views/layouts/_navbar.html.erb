@@ -41,6 +41,7 @@ nav {
       <li class="dropdown">
         <p class="dropdown-toggle" data-toggle="dropdown" data: { no_turbolink: true } ><%= t("information") %><b class="caret"></b></p>
         <ul class="dropdown-menu">
+<<<<<<< HEAD
           <li><%= link_to t("all_news"), posts_path %></a></li>
           <li><%= link_to t("all_events"), events_path %></a></li>
           <li><%= link_to t("infocenters"), infocenters_path %></a></li>
@@ -51,6 +52,17 @@ nav {
           <li class="divider"></li>
           <li><a href="http://www.uzhnu.edu.ua/uk/cat/abiturient"><%= t("entrant") %></a></li>
           <li><a href="http://www.uzhnu.edu.ua/uk/anounce/"><%= t("student") %></a></li>
+=======
+          <li><a href="posts#index"><%= t("all_news") %></a></li>
+          <li><a href="events#index"><%= t("all_events") %></a></li>
+          <li><a href="infocenters#index"><%= t("infocenters") %></a></li>
+          <li><a href="pets#index"><%= t("gallery") %></a></li>
+          <li class="divider"></li>
+          <li><a><%= t("kor_inf") %></a></li>
+          <li class="divider"></li>
+          <li><a href="/pages/abit"><%= t("entrant") %></a></li>
+          <li><a href="/pages/stud"><%= t("student") %></a></li>
+>>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
         </ul>
       </li>
 
@@ -107,6 +119,7 @@ nav {
               </i>
             <%end%>
           </li>
+<<<<<<< HEAD
 
           <li>
             <%= link_to new_prepod_path do %>
@@ -115,6 +128,8 @@ nav {
               </i>
             <%end%>
           </li>
+=======
+>>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
         </ul>
       <%end%>
 

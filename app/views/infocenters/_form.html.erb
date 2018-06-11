@@ -1,8 +1,13 @@
   	<%= f.text_field :title, autofocus: true, class: 'form-control', placeholder: 'Title', required: true   %><br />
 	<br/>
   	<p><%= f.label :body %></p>
+<<<<<<< HEAD
 	<div class="tiny"><%= f.text_area :body, :class => "tinymce", :rows => 10, :cols => 30 %><br/>
 	<%= tinymce %><br/></div>
+=======
+	<%= f.text_area :body, :class => "tinymce", :rows => 10, :cols => 30 %><br/>
+	<%= tinymce %><br/>
+>>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
  	<br/>
 	<%= button_tag( :class => "btn btn-lg btn-primary btn-block") do %>
             <i class="zmdi zmdi-check m-r-xs"></i> <%= t("save") %>

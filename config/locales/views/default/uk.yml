@@ -20,7 +20,11 @@ uk:
   infocenters: "Інфоцентр"
   schedule: "Розклад"
   new_schedule: "Новий Розклад"
+<<<<<<< HEAD
   edit_schedule: "Ред. Розклад"
+=======
+  edit_schedule: "Редагувати Розклад"
+>>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
   new_photo: "Нове фото"
   new_infocenter: "Нова стаття"
   save: "Зберегти"
@@ -30,6 +34,10 @@ uk:
   information_about_us: "Інформація про нас:"
   creating_a_faculty: "Створення факультету"
   university_administration: "Ректорат"
+<<<<<<< HEAD
   department_of_international_law: "Кафедра міжнародного права"
   new_prepods: "Додати викладача"
   all_prepods: "Всі викладачі"
+=======
+  department_of_international_law: "Кафедра міжнародного права"
+>>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35

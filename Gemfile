@@ -52,6 +52,10 @@ gem 'client_side_validations'
 #editor
 gem 'tinymce-rails'
 
+<<<<<<< HEAD
+=======
+gem 'simplecov', require: false, group: :test
+>>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -80,6 +84,10 @@ end
 
 group :test do
     gem 'rspec-rails', '~> 3.5.0.beta'
+<<<<<<< HEAD
+=======
+    gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git', branch: 'rails-5'
+>>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
     gem "factory_bot_rails"
     gem 'capybara', '~> 2.13'
     

@@ -1,7 +1,11 @@
 class RozkladsController < ApplicationController
 before_action :authenticate_user!, except: [:index, :show]
     before_action :set_rozklad, only: [:show,:edit,:update,:destroy]
+<<<<<<< HEAD
   
+=======
+   
+>>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
   def index
     @rozklads = Rozklad.all
   end

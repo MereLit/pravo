@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+GIT
+  remote: https://github.com/thoughtbot/shoulda-matchers.git
+  revision: 4b160bd19ecca7f97d7ac22dccd5fde9b0da5a9f
+  branch: rails-5
+  specs:
+    shoulda-matchers (3.1.2)
+      activesupport (>= 4.2.0)
+
+>>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
 GEM
   remote: https://rubygems.org/
   specs:
@@ -24,15 +35,26 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
+<<<<<<< HEAD
     activeadmin (1.2.1)
+=======
+    activeadmin (1.3.0)
+>>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
       arbre (>= 1.1.1)
       coffee-rails
       formtastic (~> 3.1)
       formtastic_i18n
+<<<<<<< HEAD
       inherited_resources (~> 1.7)
       jquery-rails (>= 4.2.0)
       kaminari (>= 0.15, < 2.0)
       railties (>= 4.2, < 5.2)
+=======
+      inherited_resources (>= 1.7.0)
+      jquery-rails (>= 4.2.0)
+      kaminari (>= 0.15)
+      railties (>= 4.2, < 5.3)
+>>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
       ransack (~> 1.3)
       sass (~> 3.1)
       sprockets (< 4.1)
@@ -55,9 +77,15 @@ GEM
     arbre (1.1.1)
       activesupport (>= 3.0.0)
     arel (8.0.0)
+<<<<<<< HEAD
     autoprefixer-rails (8.2.0)
       execjs
     bcrypt (3.1.11)
+=======
+    autoprefixer-rails (8.5.2)
+      execjs
+    bcrypt (3.1.12)
+>>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
     bindex (0.5.0)
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
@@ -78,7 +106,11 @@ GEM
       mime-types (>= 1.16)
     childprocess (0.9.0)
       ffi (~> 1.0, >= 1.0.11)
+<<<<<<< HEAD
     client_side_validations (11.1.1)
+=======
+    client_side_validations (11.1.2)
+>>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
       jquery-rails (~> 4.3)
       js_regex (~> 2.2)
       rails (>= 5.0.0.1, <= 6.0)
@@ -93,7 +125,11 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
+<<<<<<< HEAD
     crass (1.0.3)
+=======
+    crass (1.0.4)
+>>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
     devise (4.4.3)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -101,12 +137,22 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.3)
+<<<<<<< HEAD
     erubi (1.7.1)
     execjs (2.7.0)
     factory_bot (4.8.2)
       activesupport (>= 3.0.0)
     factory_bot_rails (4.8.2)
       factory_bot (~> 4.8.2)
+=======
+    docile (1.3.1)
+    erubi (1.7.1)
+    execjs (2.7.0)
+    factory_bot (4.10.0)
+      activesupport (>= 3.0.0)
+    factory_bot_rails (4.10.0)
+      factory_bot (~> 4.10.0)
+>>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
       railties (>= 3.0.0)
     ffi (1.9.23)
     formtastic (3.1.5)
@@ -114,10 +160,17 @@ GEM
     formtastic_i18n (0.6.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+<<<<<<< HEAD
     has_scope (0.7.1)
       actionpack (>= 4.1, < 5.2)
       activesupport (>= 4.1, < 5.2)
     i18n (1.0.0)
+=======
+    has_scope (0.7.2)
+      actionpack (>= 4.1)
+      activesupport (>= 4.1)
+    i18n (1.0.1)
+>>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
       concurrent-ruby (~> 1.0)
     inherited_resources (1.8.0)
       actionpack (>= 4.2, <= 5.2)
@@ -127,7 +180,11 @@ GEM
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
+<<<<<<< HEAD
     jquery-rails (4.3.1)
+=======
+    jquery-rails (4.3.3)
+>>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
@@ -165,7 +222,11 @@ GEM
     mini_portile2 (2.3.0)
     minitest (5.11.3)
     multi_json (1.13.1)
+<<<<<<< HEAD
     nio4r (2.3.0)
+=======
+    nio4r (2.3.1)
+>>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
     orm_adapter (0.5.0)
@@ -179,8 +240,13 @@ GEM
     polyamorous (1.3.3)
       activerecord (>= 3.0)
     public_suffix (3.0.2)
+<<<<<<< HEAD
     puma (3.11.3)
     rack (2.0.4)
+=======
+    puma (3.11.4)
+    rack (2.0.5)
+>>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
     rack-test (1.0.0)
       rack (>= 1.0, < 3)
     rails (5.1.6)
@@ -216,7 +282,11 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
+<<<<<<< HEAD
     regexp_parser (0.4.12)
+=======
+    regexp_parser (0.5.0)
+>>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
@@ -250,9 +320,20 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+<<<<<<< HEAD
     selenium-webdriver (3.11.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.2)
+=======
+    selenium-webdriver (3.12.0)
+      childprocess (~> 0.5)
+      rubyzip (~> 1.2)
+    simplecov (0.16.1)
+      docile (~> 1.1)
+      json (>= 1.8, < 3)
+      simplecov-html (~> 0.10.0)
+    simplecov-html (0.10.2)
+>>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
     spring (2.0.2)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -269,18 +350,32 @@ GEM
     thor (0.20.0)
     thread_safe (0.3.6)
     tilt (2.0.8)
+<<<<<<< HEAD
     tinymce-rails (4.7.9)
       railties (>= 3.1.1)
     turbolinks (5.1.0)
+=======
+    tinymce-rails (4.7.13)
+      railties (>= 3.1.1)
+    turbolinks (5.1.1)
+>>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
       turbolinks-source (~> 5.1)
     turbolinks-source (5.1.0)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
+<<<<<<< HEAD
     uglifier (4.1.8)
       execjs (>= 0.3.0, < 3)
     warden (1.2.7)
       rack (>= 1.0)
     web-console (3.5.1)
+=======
+    uglifier (4.1.10)
+      execjs (>= 0.3.0, < 3)
+    warden (1.2.7)
+      rack (>= 1.0)
+    web-console (3.6.2)
+>>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
       actionview (>= 5.0)
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
@@ -288,7 +383,11 @@ GEM
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)
+<<<<<<< HEAD
     xpath (3.0.0)
+=======
+    xpath (3.1.0)
+>>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
       nokogiri (~> 1.8)
 
 PLATFORMS
@@ -315,6 +414,11 @@ DEPENDENCIES
   rspec-rails (~> 3.5.0.beta)
   sass-rails (~> 5.0)
   selenium-webdriver
+<<<<<<< HEAD
+=======
+  shoulda-matchers!
+  simplecov
+>>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3

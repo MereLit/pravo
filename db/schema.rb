@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20180610215143) do
+=======
+ActiveRecord::Schema.define(version: 20180529155739) do
+>>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -96,8 +100,11 @@ ActiveRecord::Schema.define(version: 20180610215143) do
     t.string "image_content_type"
     t.integer "image_file_size"
     t.datetime "image_updated_at"
+<<<<<<< HEAD
     t.integer "com", default: 0
     t.integer "visit", default: 0
+=======
+>>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
   end
 
   create_table "predmets", force: :cascade do |t|
@@ -108,6 +115,7 @@ ActiveRecord::Schema.define(version: 20180610215143) do
     t.integer "category_id"
   end
 
+<<<<<<< HEAD
   create_table "prepods", force: :cascade do |t|
     t.string "image"
     t.string "name"
@@ -116,6 +124,8 @@ ActiveRecord::Schema.define(version: 20180610215143) do
     t.datetime "updated_at", null: false
   end
 
+=======
+>>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
   create_table "rozklads", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false

@@ -1,7 +1,12 @@
   	<%= f.text_field :title, autofocus: true, class: 'form-control', placeholder: 'Title', required: true  %><br />
   	<p><%= f.label :body %></p>
+<<<<<<< HEAD
 	<div class="tiny"><%= f.text_area :body, :class => "tinymce", :rows => 10, :cols => 70, autofocus: true %><br/>
 	<%= tinymce %><br/></div>
+=======
+	<%= f.text_area :body, :class => "tinymce", :rows => 10, :cols => 70, autofocus: true %><br/>
+	<%= tinymce %><br/>
+>>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
   	<p><%= f.label :image %></p>
   	<%= f.file_field :image %><br/>
  	<br/>

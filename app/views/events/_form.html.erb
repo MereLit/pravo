@@ -17,8 +17,13 @@
 	<%= f.select :ecost, ['Безкоштовний','Платний'] %><br />
 	<br/>
 	<p><%= f.label "Інформація" %></p>
+<<<<<<< HEAD
 	<div class="tiny"><%= f.text_area :einfo, :class => "tinymce", :rows => 10, :cols => 50 %><br/>
 	<%= tinymce %></div><br/>
+=======
+	<%= f.text_area :einfo, :class => "tinymce", :rows => 10, :cols => 30 %><br/>
+	<%= tinymce %><br/>
+>>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
 
 	<br/>
 	<%= button_tag( :class => "btn btn-lg btn-primary btn-block") do %>

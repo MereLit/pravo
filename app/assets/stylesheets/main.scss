@@ -1,4 +1,5 @@
  @import url("http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,400italic");
+<<<<<<< HEAD
  @import url("//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css");
 
 body a{
@@ -10,11 +11,19 @@ body a{
     transition: 0.3s ease;
   }
 }
+=======
+    @import url("//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css");
+>>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
 
 /*********************************/
 /*             NEWS              */
 /*********************************/
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
 .card {
     font-size: 1em;
     overflow: hidden;
@@ -41,9 +50,15 @@ body a{
 }
 
 .card-title {
+<<<<<<< HEAD
     font-size: 1.022em;
     font-weight: 600;
     line-height: 1.022em;
+=======
+    font-size: 1.28571429em;
+    font-weight: 700;
+    line-height: 1.2857em;
+>>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
 }
 
 .card-text {
@@ -54,10 +69,15 @@ body a{
     overflow: hidden;
     text-overflow: ellipsis;
 }
+<<<<<<< HEAD
 .otn {
   margin: auto;
   width: 60%;
 }
+=======
+
+
+>>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
 
 /********************************/
 /*       Fade Bs-carousel       */
@@ -189,8 +209,11 @@ body a{
     font-family: 'Lato', sans-serif;
     margin: 0px;
     padding: 0px;
+<<<<<<< HEAD
     width:325px;
     hight: 75px;
+=======
+>>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
   }
   .event-list > li {
     background-color: rgb(255, 255, 255);
@@ -217,9 +240,14 @@ body a{
   .event-list > li > time > .day {
     display: block;
     font-size: 30pt;
+<<<<<<< HEAD
     font-weight: 300;
     line-height: 1;
     padding-top: 10px;
+=======
+    font-weight: 100;
+    line-height: 1;
+>>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
   }
   .event-list > li time > .month {
     display: block;
@@ -230,23 +258,47 @@ body a{
 
   .event-list > li > .info {
     padding-left: 5px;
+<<<<<<< HEAD
     padding-top: 8px;
   }
   .event-list > li > .info > .title {
     font-size: 17pt;
+=======
+    padding-top: 15px;
+    text-align: center;
+  }
+  .event-list > li > .info > .title {
+    font-size: 17pt;
+    font-weight: 700;
+    margin: 0px;
+  }
+  .event-list > li > .info > .desc {
+    font-size: 13pt;
+>>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
     font-weight: 300;
     margin: 0px;
   }
   
     .event-list > li > .info > ul > li > a {
     display: block;
+<<<<<<< HEAD
+=======
+    width: 100%;
+>>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
     color: rgb(30, 30, 30);
     text-decoration: none;
   } 
 
   @media (min-width: 768px) {
     .event-list > li {
+<<<<<<< HEAD
       display: block;
+=======
+      position: relative;
+      display: block;
+      width: 300px;
+      height: 75px;
+>>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
       padding: 0px;
     }
     .event-list > li > time,
@@ -255,7 +307,11 @@ body a{
     }
     .event-list > li > time,
     .event-list > li > img {
+<<<<<<< HEAD
       width: 76px;
+=======
+      width: 75px;
+>>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
       float: left;
     }
     .event-list > li > .info {
@@ -264,14 +320,23 @@ body a{
     }
     .event-list > li > time,
     .event-list > li > img {
+<<<<<<< HEAD
       width: 80px;
       height: 96px;
+=======
+      width: 75px;
+      height: 75px;
+>>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
       padding: 0px;
       margin: 0px;
     }
     .event-list > li > .info {
       position: relative;
+<<<<<<< HEAD
       height: 95px;
+=======
+      height: 75px;
+>>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
       text-align: left;
       padding-right: 40px;
     } 
@@ -313,6 +378,7 @@ body a{
 /********************************/
 /*           Posts              */
 /********************************/
+<<<<<<< HEAD
     .post{
       width: 800px;
       background-color: white;
@@ -325,6 +391,8 @@ body a{
         top: 0px; 
         width: 360px;
     }
+=======
+>>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
 
 .com { 
     text-align: center;
@@ -893,9 +961,12 @@ img {
 }
 .m-0 {
   margin: 0 !important;
+<<<<<<< HEAD
 }
 
 .tiny{
   width: 600px;
   margin-left: -145px;
+=======
+>>>>>>> 0e85ce8e7b0a0ba37c4dc502d064aeba91c93b35
 }
